@@ -1,0 +1,5 @@
+- name: Update repo cache
+  changed_when: false
+  apt:
+    update_cache: yes
+  tags: always

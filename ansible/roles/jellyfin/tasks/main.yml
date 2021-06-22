@@ -1,0 +1,6 @@
+- name: Install packages
+  apt:
+    pkg:
+      - apt-transport-https
+    state: latest
+  tags: jellyfin

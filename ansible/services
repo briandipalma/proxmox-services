@@ -1,0 +1,9 @@
+[common]
+jellyfin.test
+tv.test
+
+[jellyfin]
+jellyfin.test
+
+[sonarr]
+tv.test
