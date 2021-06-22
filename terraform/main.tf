@@ -2,7 +2,7 @@ resource "proxmox_lxc" "proxmox_services" {
   count = length(var.hostnames)
   target_node  = "pve"
   hostname     = var.hostnames[count.index]
-  ostemplate   = "local:vztmpl/ubuntu-21.04-standard_21.04-1_amd64.tar.gz"
+  ostemplate   = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
   unprivileged = true
   ostype = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
@@ -16,7 +16,7 @@ resource "proxmox_lxc" "proxmox_services" {
   }
 
   mountpoint {
-    mp      = "/mnt/bind-mount-point"
+    mp      = "/etc/jellyfin"
     size    = "8G"
     slot    = 0
     key     = "0"
