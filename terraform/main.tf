@@ -8,6 +8,7 @@ resource "proxmox_lxc" "proxmox_services" {
   ssh_public_keys = file(var.pub_ssh_key)
   start = true
   onboot = true
+  vmid = var.vmids[count.index]
 
   // Terraform will crash without rootfs defined
   rootfs {

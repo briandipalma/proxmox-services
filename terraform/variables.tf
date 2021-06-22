@@ -27,6 +27,12 @@ variable "pub_ssh_key" {
   default = "~/.ssh/id_ed25519.pub"
 }
 
+variable "vmids" {
+  description = "LXC IDs"
+  type = list(string)
+  default = ["500", "501"]
+}
+
 variable "macs" {
   description = "Proxmox services MACs"
   type = list(string)
