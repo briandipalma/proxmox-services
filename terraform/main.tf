@@ -8,6 +8,7 @@ resource "proxmox_lxc" "jellyfin" {
   start = true
   onboot = true
   vmid = "500"
+  memory = 4096
 
   // Terraform will crash without rootfs defined
   rootfs {
@@ -46,6 +47,24 @@ resource "proxmox_lxc" "jellyfin" {
     volume  = "/srv/jellyfin/cache"
   }
   
+  mountpoint {
+    mp      = "/mnt/tvseries"
+    size    = "8G"
+    slot    = 3
+    key     = "3"
+    storage = "/mnt/storage/tvseries"
+    volume  = "/mnt/storage/tvseries"
+  }
+  
+  mountpoint {
+    mp      = "/mnt/movies"
+    size    = "8G"
+    slot    = 4
+    key     = "4"
+    storage = "/mnt/storage/movies"
+    volume  = "/mnt/storage/movies"
+  }
+
   network {
     name   = "eth0"
     bridge = "vmbr0"
