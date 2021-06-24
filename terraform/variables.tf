@@ -18,7 +18,7 @@ variable "proxmox_password" {
 variable "hostnames" {
   description = "Proxmox services hostnames"
   type = list(string)
-  default = ["jellyfin", "tv"]
+  default = ["tv"]
 }
 
 variable "pub_ssh_key" {
@@ -30,11 +30,11 @@ variable "pub_ssh_key" {
 variable "vmids" {
   description = "LXC IDs"
   type = list(string)
-  default = ["500", "501"]
+  default = ["501"]
 }
 
 variable "macs" {
   description = "Proxmox services MACs"
   type = list(string)
-  default = ["7A:25:2B:1B:BE:EF", "F2:07:09:E7:05:32"]
+  default = ["F2:07:09:E7:05:32"]
 }
