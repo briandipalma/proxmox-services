@@ -1,10 +1,10 @@
 ---
 - hosts: jellyfin
   roles:
-    - common
-    - jellyfin
+    - { role: common, tags: all }
+    - { role: jellyfin, tags: jellyfin }
     
 - hosts: sonarr
   roles:
-    - common
-    - sonarr
+    - { role: common, tags: all }
+    - { role: sonarr, tags: sonarr }

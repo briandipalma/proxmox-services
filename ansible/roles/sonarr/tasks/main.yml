@@ -4,43 +4,36 @@
       - ca-certificates
       - gnupg
     state: latest
-  tags: sonarr
     
 - name: Add Mono project apt key
   ansible.builtin.apt_key:
     keyserver: keyserver.ubuntu.com
     id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-  tags: sonarr
 
 - name: Add the Mono repository
   apt_repository:
     repo: deb https://download.mono-project.com/repo/ubuntu stable-focal main
     filename: mono-official-stable
     state: present
-  tags: sonarr
 
 - name: Add Sonarr project apt key
   ansible.builtin.apt_key:
     keyserver: keyserver.ubuntu.com
     id: 2009837CBFFD68F45BC180471F4F90DE2A9B4BF8
-  tags: sonarr
 
 - name: Add the Sonarr repository
   apt_repository:
     repo: deb https://apt.sonarr.tv/ubuntu focal main
     filename: sonarr
     state: present
-  tags: sonarr
 
 - name: Update repo cache
   changed_when: false
   apt:
     update_cache: yes
-  tags: sonarr
 
 - name: Install sonarr
   apt:
     pkg:
       - sonarr
     state: latest
-  tags: sonarr
