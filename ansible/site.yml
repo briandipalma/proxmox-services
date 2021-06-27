@@ -3,3 +3,8 @@
   roles:
     - common
     - jellyfin
+    
+- hosts: sonarr
+  roles:
+    - common
+    - sonarr
