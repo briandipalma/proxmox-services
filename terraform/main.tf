@@ -21,12 +21,8 @@ resource "proxmox_lxc" "jellyfin" {
     size    = "1G"
     slot    = 0
     key     = "0"
-    storage = "/srv/jellyfin/config"
-    // Without 'volume' defined, Proxmox will try to create a volume with
-    // the value of 'storage' + : + 'size' (without the trailing G) - e.g.
-    // "/srv/host/bind-mount-point:256".
-    // This behaviour looks to be caused by a bug in the provider.
-    volume  = "/srv/jellyfin/config"
+    storage = "/mnt/storage/appdata/jellyfin/config"
+    volume  = "/mnt/storage/appdata/jellyfin/config"
   }
 
   mountpoint {
@@ -34,8 +30,8 @@ resource "proxmox_lxc" "jellyfin" {
     size    = "8G"
     slot    = 1
     key     = "1"
-    storage = "/srv/jellyfin/data"
-    volume  = "/srv/jellyfin/data"
+    storage = "/mnt/storage/appdata/jellyfin/data"
+    volume  = "/mnt/storage/appdata/jellyfin/data"
   }
   
   mountpoint {
@@ -43,28 +39,19 @@ resource "proxmox_lxc" "jellyfin" {
     size    = "8G"
     slot    = 2
     key     = "2"
-    storage = "/srv/jellyfin/cache"
-    volume  = "/srv/jellyfin/cache"
+    storage = "/mnt/storage/appdata/jellyfin/cache"
+    volume  = "/mnt/storage/appdata/jellyfin/cache"
   }
   
   mountpoint {
-    mp      = "/mnt/tvseries"
+    mp      = "/mnt/media"
     size    = "8G"
     slot    = 3
     key     = "3"
-    storage = "/mnt/storage/tvseries"
-    volume  = "/mnt/storage/tvseries"
+    storage = "/mnt/storage/media"
+    volume  = "/mnt/storage/media"
   }
   
-  mountpoint {
-    mp      = "/mnt/movies"
-    size    = "8G"
-    slot    = 4
-    key     = "4"
-    storage = "/mnt/storage/movies"
-    volume  = "/mnt/storage/movies"
-  }
-
   network {
     name   = "eth0"
     bridge = "vmbr0"
@@ -92,16 +79,21 @@ resource "proxmox_lxc" "proxmox_services" {
   }
 
   mountpoint {
-    mp      = "/etc/jellyfin"
+    mp      = "/var/lib/sonarr"
     size    = "8G"
     slot    = 0
     key     = "0"
-    storage = "/srv/test"
-    // Without 'volume' defined, Proxmox will try to create a volume with
-    // the value of 'storage' + : + 'size' (without the trailing G) - e.g.
-    // "/srv/host/bind-mount-point:256".
-    // This behaviour looks to be caused by a bug in the provider.
-    volume  = "/srv/test"
+    storage = "/mnt/storage/appdata/sonarr/config"
+    volume  = "/mnt/storage/appdata/sonarr/config"
+  }
+
+  mountpoint {
+    mp      = "/mnt/storage"
+    size    = "8G"
+    slot    = 1
+    key     = "1"
+    storage = "/mnt/storage"
+    volume  = "/mnt/storage"
   }
 
   network {
