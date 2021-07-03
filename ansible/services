@@ -2,6 +2,9 @@
 jellyfin.test
 tv.test
 
+[traefik]
+traefik.test
+
 [jellyfin]
 jellyfin.test
 

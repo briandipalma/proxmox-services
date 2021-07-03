@@ -1,0 +1,10 @@
+- name: Install Traefik
+  unarchive:
+    src: https://github.com/traefik/traefik/releases/download/v2.4.9/traefik_v2.4.9_linux_amd64.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+
+- name: Copy Traefik config
+  copy:
+    src: traefik
+    dest: /etc

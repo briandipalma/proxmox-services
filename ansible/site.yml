@@ -1,9 +1,14 @@
 ---
+- hosts: traefik
+  roles:
+    - { role: common, tags: all }
+    - { role: traefik, tags: traefik }
+
 - hosts: jellyfin
   roles:
     - { role: common, tags: all }
     - { role: jellyfin, tags: jellyfin }
-    
+
 - hosts: sonarr
   roles:
     - { role: common, tags: all }

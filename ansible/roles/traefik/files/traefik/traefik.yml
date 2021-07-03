@@ -1,0 +1,11 @@
+entryPoints:
+  web:
+    address: :80
+
+  websecure:
+    address: :443
+
+providers:
+  file:
+    directory: /etc/traefik/config
+    watch: true
