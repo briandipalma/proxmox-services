@@ -1,0 +1,11 @@
+http:
+  routers:
+    to-sonarr:
+      rule: "Host(`tv.test`)"
+      service: sonarr
+
+  services:
+    sonarr:
+      loadBalancer:
+        servers:
+          - url: http://192.168.1.11:8989

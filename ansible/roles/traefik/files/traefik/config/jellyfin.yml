@@ -1,0 +1,11 @@
+http:
+  routers:
+    to-jellyfin:
+      rule: "Host(`jellyfin.test`)"
+      service: jellyfin
+
+  services:
+    jellyfin:
+      loadBalancer:
+        servers:
+          - url: http://192.168.1.10:8096
