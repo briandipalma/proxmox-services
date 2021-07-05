@@ -1,0 +1,53 @@
+- name: Install packages
+  apt:
+    pkg:
+      - openjdk-15-jdk
+      - unzip
+    state: latest
+
+- name: Create NZBHydra group
+  group:
+    name: nzbhydra
+    state: present
+
+- name: Create NZBHydra user
+  user:
+    name: nzbhydra
+    groups: nzbhydra
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+    
+- name: Create NZBHydra directory
+  file:
+    path: /opt/nzbhydra
+    state: directory
+    
+- name: Install NZBHydra
+  unarchive:
+    src: https://github.com/theotherp/nzbhydra2/releases/download/v3.14.2/nzbhydra2-3.14.2-linux.zip
+    dest: /opt/nzbhydra
+    remote_src: yes
+
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: /opt/nzbhydra/nzbhydra2
+    mode: '0744'
+    
+- name: Recursively change ownership of NZBHydra directory
+  ansible.builtin.file:
+    path: /opt/nzbhydra/
+    state: directory
+    recurse: yes
+    owner: nzbhydra
+    group: nzbhydra
+
+- name: Copy systemd service file to server
+  copy:
+    src: nzbhydra.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Start NZBHydra

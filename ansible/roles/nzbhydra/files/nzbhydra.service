@@ -1,0 +1,18 @@
+[Unit]
+Description=NZBHydra Daemon
+Documentation=https://github.com/theotherp/nzbhydra2
+After=network.target
+
+[Service]
+User=nzbhydra
+Group=nzbhydra
+Type=simple
+WorkingDirectory=/opt/nzbhydra
+# NZBHydra stores its data in a "data" subfolder of its installation path
+# To change that set the --datafolder parameter:
+# --datafolder /var/local/lib/nzbhydra
+ExecStart=/opt/nzbhydra/nzbhydra2 --nobrowser
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
