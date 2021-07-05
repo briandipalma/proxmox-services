@@ -1,0 +1,5 @@
+- name: Start Traefik
+  systemd:
+    name: traefik
+    state: started
+    enabled: yes

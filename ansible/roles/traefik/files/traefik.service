@@ -1,0 +1,10 @@
+[Unit]
+Description=Traefik service
+
+[Service]
+User=traefik
+Group=traefik
+ExecStart=traefik
+
+[Install]
+WantedBy=multi-user.target

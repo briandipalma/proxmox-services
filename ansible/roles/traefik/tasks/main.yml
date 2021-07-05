@@ -3,8 +3,37 @@
     src: https://github.com/traefik/traefik/releases/download/v2.4.9/traefik_v2.4.9_linux_amd64.tar.gz
     dest: /usr/local/bin
     remote_src: yes
+    
+- name: Create traefik group
+  group:
+    name: traefik
+    state: present
+
+- name: Create traefik user
+  user:
+    name: traefik
+    groups: traefik
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+
+- name: Set port binding capability on Traefik
+  community.general.capabilities:
+    path: /usr/local/bin/traefik
+    capability: cap_net_bind_service+ep
+    state: present
 
 - name: Copy Traefik config
   copy:
     src: traefik
     dest: /etc
+
+- name: Copy systemd service file to server
+  copy:
+    src: traefik.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Start Traefik
