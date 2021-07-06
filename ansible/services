@@ -1,15 +1,18 @@
 [common]
-192.168.1.10
-192.168.1.11
+traefik.test
+jellyfin.test
+sonarr.test
+radarr.test
+nzbhydra.test
 
 [traefik]
-192.168.1.4
+traefik.test
 
 [jellyfin]
-192.168.1.10
+jellyfin.test
 
 [sonarr]
-192.168.1.11
+sonarr.test
 
 [nzbhydra]
-192.168.1.12
+nzbhydra.test
