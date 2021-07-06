@@ -146,7 +146,7 @@ resource "proxmox_lxc" "nzbhydra" {
   }
 
   mountpoint {
-    mp      = "/mnt/nzbhydra"
+    mp      = "/opt/nzbhydra/data"
     size    = "8G"
     slot    = 0
     key     = "0"
