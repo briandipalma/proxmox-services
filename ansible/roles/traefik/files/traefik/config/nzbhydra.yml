@@ -1,0 +1,11 @@
+http:
+  routers:
+    to-nzbhydra:
+      rule: "Host(`search.test`)"
+      service: nzbhydra
+
+  services:
+    nzbhydra:
+      loadBalancer:
+        servers:
+          - url: http://192.168.1.12:5076
