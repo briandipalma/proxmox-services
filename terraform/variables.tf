@@ -50,6 +50,26 @@ variable "nzbhydra_lxcid" {
   default = 504
 }
 
+variable "jackett_lxcid" {
+  type = number
+  default = 505
+}
+
+variable "transmission_lxcid" {
+  type = number
+  default = 506
+}
+
+variable "nzbget_lxcid" {
+  type = number
+  default = 507
+}
+
+variable "samba_lxcid" {
+  type = number
+  default = 508
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -73,4 +93,24 @@ variable "radarr_mac" {
 variable "nzbhydra_mac" {
   type = string
   default = "06:82:C0:36:D1:FB"
+}
+
+variable "jackett_mac" {
+  type = string
+  default = "EE:57:5F:63:A8:8A"
+}
+
+variable "transmission_mac" {
+  type = string
+  default = "EE:28:5A:1B:D5:DD"
+}
+
+variable "nzbget_mac" {
+  type = string
+  default = "12:E8:11:73:7E:38"
+}
+
+variable "samba_mac" {
+  type = string
+  default = "CE:04:BF:59:F1:7F"
 }
