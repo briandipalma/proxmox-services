@@ -1,0 +1,11 @@
+http:
+  routers:
+    to-radarr:
+      rule: "Host(`movies.test`)"
+      service: radarr
+
+  services:
+    radarr:
+      loadBalancer:
+        servers:
+          - url: http://192.168.1.12:8989

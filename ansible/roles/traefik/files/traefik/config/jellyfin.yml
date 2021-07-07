@@ -1,7 +1,7 @@
 http:
   routers:
     to-jellyfin:
-      rule: "Host(`jellyfin.test`)"
+      rule: "Host(`media.test`)"
       service: jellyfin
 
   services:
