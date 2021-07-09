@@ -1,4 +1,5 @@
 ---
+- import_playbook: pi-hole.yml
 - import_playbook: traefik.yml
 - import_playbook: jellyfin.yml
 - import_playbook: sonarr.yml

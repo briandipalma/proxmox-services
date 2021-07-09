@@ -1,0 +1,6 @@
+- name: Copy Pi-hole Local DNS Records config
+  copy:
+    src: custom.list
+    dest: /etc/pihole/
+  notify:
+    - Restart Pi-hole
