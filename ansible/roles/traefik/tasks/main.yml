@@ -4,12 +4,12 @@
     dest: /usr/local/bin
     remote_src: yes
     
-- name: Create traefik group
+- name: Create Traefik group
   group:
     name: traefik
     state: present
 
-- name: Create traefik user
+- name: Create Traefik user
   user:
     name: traefik
     groups: traefik

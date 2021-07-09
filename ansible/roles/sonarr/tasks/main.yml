@@ -32,7 +32,7 @@
   apt:
     update_cache: yes
 
-- name: Install sonarr
+- name: Install Sonarr
   apt:
     pkg:
       - sonarr
