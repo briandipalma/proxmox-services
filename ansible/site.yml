@@ -1,20 +1,5 @@
 ---
-- hosts: traefik
-  roles:
-    - { role: common, tags: all }
-    - { role: traefik, tags: traefik }
-
-- hosts: jellyfin
-  roles:
-    - { role: common, tags: all }
-    - { role: jellyfin, tags: jellyfin }
-
-- hosts: sonarr
-  roles:
-    - { role: common, tags: all }
-    - { role: sonarr, tags: sonarr }
-    
-- hosts: nzbhydra
-  roles:
-    - { role: common, tags: all }
-    - { role: nzbhydra, tags: nzbhydra }
+- import_playbook: traefik.yml
+- import_playbook: jellyfin.yml
+- import_playbook: sonarr.yml
+- import_playbook: nzbhydra.yml

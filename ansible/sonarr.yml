@@ -1,0 +1,5 @@
+---
+- hosts: sonarr
+  roles:
+    - { role: common, tags: all }
+    - { role: sonarr, tags: sonarr }

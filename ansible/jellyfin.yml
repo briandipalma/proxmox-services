@@ -1,0 +1,5 @@
+---
+- hosts: jellyfin
+  roles:
+    - { role: common, tags: all }
+    - { role: jellyfin, tags: jellyfin }
