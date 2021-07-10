@@ -1,0 +1,3 @@
+ansible_python_interpreter: /usr/bin/python3
+become_root: true
+ansible_user: brian
