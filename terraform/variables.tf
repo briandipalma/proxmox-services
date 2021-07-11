@@ -70,6 +70,11 @@ variable "samba_lxcid" {
   default = 508
 }
 
+variable "pi-hole-primary_lxcid" {
+  type = number
+  default = 509
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -113,4 +118,9 @@ variable "nzbget_mac" {
 variable "samba_mac" {
   type = string
   default = "CE:04:BF:59:F1:7F"
+}
+
+variable "pi-hole-primary_mac" {
+  type = string
+  default = "BA:B8:76:70:58:90"
 }
