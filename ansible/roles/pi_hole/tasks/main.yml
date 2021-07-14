@@ -12,12 +12,21 @@
     dest: /etc/pihole/
   register: setup_conf_copied
     
-- name: Install Pi-hole
-  when: setup_conf_copied.changed
-  ansible.builtin.command:
-    argv:
-      - ~/install-pihole.sh
-      - --unattended
+- name: Copy Pi-hole DHCP config
+  when: ansible_hostname == "raspberrypi"
+  copy:
+    src: 02-pihole-dhcp.conf
+    dest: /etc/dnsmasq.d/
+  notify:
+    - Restart Pi-hole
+
+- name: Copy Pi-hole DHCP static leases config
+  when: ansible_hostname == "raspberrypi"
+  copy:
+    src: 04-pihole-static-dhcp.conf
+    dest: /etc/dnsmasq.d/
+  notify:
+    - Restart Pi-hole
 
 - name: Copy Pi-hole Local DNS Records config
   copy:
@@ -25,3 +34,10 @@
     dest: /etc/pihole/
   notify:
     - Restart Pi-hole
+
+- name: Install Pi-hole
+  when: setup_conf_copied.changed
+  ansible.builtin.command:
+    argv:
+      - ~/install-pihole.sh
+      - --unattended
