@@ -28,6 +28,14 @@
   notify:
     - Restart Pi-hole
 
+- name: Copy Pi-hole DHCP DNS servers config
+  when: ansible_hostname == "raspberrypi"
+  copy:
+    src: 10-pihole-dns-servers.conf
+    dest: /etc/dnsmasq.d/
+  notify:
+    - Restart Pi-hole
+
 - name: Copy Pi-hole Local DNS Records config
   copy:
     src: custom.list
