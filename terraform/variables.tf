@@ -75,6 +75,11 @@ variable "pi-hole-primary_lxcid" {
   default = 509
 }
 
+variable "unifi_lxcid" {
+  type = number
+  default = 510
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -123,4 +128,9 @@ variable "samba_mac" {
 variable "pi-hole-primary_mac" {
   type = string
   default = "BA:B8:76:70:58:90"
+}
+
+variable "unifi_mac" {
+  type = string
+  default = "02:58:BD:D4:C1:FC"
 }
