@@ -1,0 +1,41 @@
+- name: Install required packages
+  apt:
+    pkg:
+      - ca-certificates  
+      - apt-transport-https
+      - gnupg
+      - openjdk-8-jre-headless
+    state: latest
+
+- name: Add the Ubiquiti repository Apt signing key
+  ansible.builtin.apt_key:
+    url: https://dl.ui.com/unifi/unifi-repo.gpg
+    keyring: /etc/apt/trusted.gpg.d/unifi-repo.gpg
+
+- name: Add the Ubiquiti repository
+  apt_repository:
+    repo: deb https://www.ui.com/downloads/unifi/debian stable ubiquiti
+    filename: 100-ubnt-unifi
+    state: present
+
+- name: Add the MongoDB repository Apt signing key
+  ansible.builtin.apt_key:
+    url: https://www.mongodb.org/static/pgp/server-3.4.asc
+    state: present
+
+- name: Add the MongoDB repository
+  apt_repository:
+    repo: deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse
+    filename: mongodb-org-3.4
+    state: present
+
+- name: Install Libssl
+  apt:
+    deb: http://security.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.6_amd64.deb
+
+- name: Install UniFi Network Application
+  apt:
+    pkg:
+      - unifi
+    state: latest
+    update_cache: yes

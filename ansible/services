@@ -6,6 +6,7 @@ radarr.test
 nzbhydra.test
 192.168.1.2
 192.168.1.3
+192.168.1.6
 
 [pi_hole]
 192.168.1.2
@@ -13,6 +14,9 @@ nzbhydra.test
 
 [traefik]
 traefik.test
+
+[unifi]
+192.168.1.6
 
 [jellyfin]
 jellyfin.test
