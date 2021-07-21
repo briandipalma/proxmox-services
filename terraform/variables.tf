@@ -80,6 +80,11 @@ variable "unifi_lxcid" {
   default = 510
 }
 
+variable "prowlarr_lxcid" {
+  type = number
+  default = 511
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -133,4 +138,9 @@ variable "pi-hole-primary_mac" {
 variable "unifi_mac" {
   type = string
   default = "02:58:BD:D4:C1:FC"
+}
+
+variable "prowlarr_mac" {
+  type = string
+  default = "06:90:EE:CD:05:87"
 }
