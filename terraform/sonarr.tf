@@ -8,6 +8,7 @@ resource "proxmox_lxc" "sonarr" {
   start = true
   onboot = true
   vmid = var.sonarr_lxcid
+  memory = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {

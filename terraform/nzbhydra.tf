@@ -8,6 +8,7 @@ resource "proxmox_lxc" "nzbhydra" {
   start = true
   onboot = true
   vmid = var.nzbhydra_lxcid
+  memory = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {

@@ -8,7 +8,7 @@ resource "proxmox_lxc" "unifi" {
   start = true
   onboot = true
   vmid = var.unifi_lxcid
-  memory = 1024
+  memory = 2048
 
   // Terraform will crash without rootfs defined
   rootfs {
