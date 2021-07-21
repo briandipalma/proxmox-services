@@ -18,7 +18,9 @@ resource "proxmox_lxc" "traefik" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = "192.168.1.1"
+    ip     = "192.168.1.4/24"
+    ip6    = "auto"
     hwaddr = var.traefik_mac
   }
 }
