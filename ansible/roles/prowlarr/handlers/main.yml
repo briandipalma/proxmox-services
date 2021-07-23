@@ -1,0 +1,5 @@
+- name: Start Prowlarr
+  systemd:
+    name: prowlarr
+    state: started
+    enabled: yes

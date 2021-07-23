@@ -15,6 +15,15 @@ resource "proxmox_lxc" "prowlarr" {
     size    = "4G"
   }
 
+  mountpoint {
+    mp      = "/Prowlarr-data"
+    size    = "1G"
+    slot    = 0
+    key     = "0"
+    storage = "/mnt/storage/appdata/prowlarr/config"
+    volume  = "/mnt/storage/appdata/prowlarr/config"
+  }
+
   network {
     name   = "eth0"
     bridge = "vmbr0"

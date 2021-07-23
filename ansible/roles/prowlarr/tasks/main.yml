@@ -1,0 +1,43 @@
+- name: Install packages
+  apt:
+    pkg:
+      - curl
+      - sqlite3
+    state: latest
+
+- name: Install Prowlarr
+  unarchive:
+    src: https://github.com/Prowlarr/Prowlarr/releases/download/v0.1.0.608/Prowlarr.develop.0.1.0.608.linux-core-x64.tar.gz
+    dest: /opt/
+    remote_src: yes
+
+- name: Create Prowlarr group
+  group:
+    name: prowlarr
+    state: present
+
+- name: Create Prowlarr user
+  user:
+    name: prowlarr
+    groups: prowlarr
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+
+- name: Recursively change ownership of Prowlarr directory
+  ansible.builtin.file:
+    path: /opt/Prowlarr
+    state: directory
+    recurse: yes
+    owner: prowlarr
+    group: prowlarr
+
+- name: Copy systemd service file to server
+  copy:
+    src: prowlarr.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Start Prowlarr

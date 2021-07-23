@@ -10,3 +10,7 @@ Set directory UID/GID: `chown -R 100110:101000 sonarr/`
 # NZBHydra
 
 Set directory UID/GID: `chown -R 101000:100100 nzbhydra/`
+
+# Prowlarr
+
+Set directory UID/GID: `chown -R 101000:100100 prowlarr/`
