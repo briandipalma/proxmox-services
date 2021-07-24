@@ -27,7 +27,9 @@ resource "proxmox_lxc" "nzbget" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = "192.168.1.1"
+    ip     = "192.168.1.16/24"
+    ip6    = "auto"
     hwaddr = var.nzbget_mac
   }
   
