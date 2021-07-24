@@ -32,4 +32,10 @@ resource "proxmox_lxc" "prowlarr" {
     ip6    = "auto"
     hwaddr = var.prowlarr_mac
   }
+
+  lifecycle {
+    ignore_changes = [
+      mountpoint[0].storage
+    ]
+  }
 }
