@@ -1,0 +1,5 @@
+- name: Start NZBGet
+  systemd:
+    name: nzbget
+    state: started
+    enabled: yes

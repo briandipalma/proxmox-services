@@ -8,6 +8,7 @@ nzbhydra.test
 192.168.1.3
 192.168.1.6
 prowlarr.test
+nzbget.test
 
 [pi_hole]
 192.168.1.2
@@ -30,3 +31,6 @@ prowlarr.test
 
 [nzbhydra]
 nzbhydra.test
+
+[nzbget]
+nzbget.test

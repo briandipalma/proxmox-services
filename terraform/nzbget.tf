@@ -16,7 +16,7 @@ resource "proxmox_lxc" "nzbget" {
   }
 
   mountpoint {
-    mp      = "/opt/nzbget/data"
+    mp      = "/nzbget-config"
     size    = "8G"
     slot    = 0
     key     = "0"
