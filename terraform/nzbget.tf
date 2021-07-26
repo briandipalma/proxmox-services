@@ -8,6 +8,7 @@ resource "proxmox_lxc" "nzbget" {
   start = true
   onboot = true
   vmid = var.nzbget_lxcid
+  memory = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {
@@ -24,6 +25,15 @@ resource "proxmox_lxc" "nzbget" {
     volume  = "/mnt/storage/appdata/nzbget/config"
   }
 
+  mountpoint {
+    mp      = "/mnt/storage/downloads/usenet"
+    size    = "8G"
+    slot    = 1
+    key     = "1"
+    storage = "/mnt/storage/downloads/usenet"
+    volume  = "/mnt/storage/downloads/usenet"
+  }
+
   network {
     name   = "eth0"
     bridge = "vmbr0"
@@ -35,7 +45,8 @@ resource "proxmox_lxc" "nzbget" {
   
   lifecycle {
     ignore_changes = [
-      mountpoint[0].storage
+      mountpoint[0].storage,
+      mountpoint[1].storage
     ]
   }
 }
