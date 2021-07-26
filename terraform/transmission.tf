@@ -9,7 +9,6 @@ resource "proxmox_lxc" "transmission" {
   onboot = true
   vmid = var.transmission_lxcid
 
-  // Terraform will crash without rootfs defined
   rootfs {
     storage = "local-lvm"
     size    = "4G"
@@ -24,16 +23,28 @@ resource "proxmox_lxc" "transmission" {
     volume  = "/mnt/storage/appdata/transmission/config"
   }
 
+  mountpoint {
+    mp      = "/mnt/storage/downloads/torrents"
+    size    = "8G"
+    slot    = 1
+    key     = "1"
+    storage = "/mnt/storage/downloads/torrents"
+    volume  = "/mnt/storage/downloads/torrents"
+  }
+
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = "192.168.1.1"
+    ip     = "192.168.1.15/24"
+    ip6    = "auto"
     hwaddr = var.transmission_mac
   }
-  
+ 
   lifecycle {
     ignore_changes = [
-      mountpoint[0].storage
+      mountpoint[0].storage,
+      mountpoint[1].storage
     ]
   }
 }
