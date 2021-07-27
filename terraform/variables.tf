@@ -45,11 +45,6 @@ variable "radarr_lxcid" {
   default = 503
 }
 
-variable "jackett_lxcid" {
-  type = number
-  default = 505
-}
-
 variable "qbittorrent_lxcid" {
   type = number
   default = 506
@@ -98,11 +93,6 @@ variable "sonarr_mac" {
 variable "radarr_mac" {
   type = string
   default = "36:67:C0:9C:48:9C"
-}
-
-variable "jackett_mac" {
-  type = string
-  default = "EE:57:5F:63:A8:8A"
 }
 
 variable "qbittorrent_mac" {
