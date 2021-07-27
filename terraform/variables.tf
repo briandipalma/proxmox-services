@@ -55,7 +55,7 @@ variable "jackett_lxcid" {
   default = 505
 }
 
-variable "transmission_lxcid" {
+variable "qbittorrent_lxcid" {
   type = number
   default = 506
 }
@@ -115,7 +115,7 @@ variable "jackett_mac" {
   default = "EE:57:5F:63:A8:8A"
 }
 
-variable "transmission_mac" {
+variable "qbittorrent_mac" {
   type = string
   default = "EE:28:5A:1B:D5:DD"
 }

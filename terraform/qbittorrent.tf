@@ -1,13 +1,13 @@
-resource "proxmox_lxc" "transmission" {
+resource "proxmox_lxc" "qbittorrent" {
   target_node  = "pve"
-  hostname     = "transmission"
+  hostname     = "qbittorrent"
   ostemplate   = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
   unprivileged = true
   ostype = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
   start = true
   onboot = true
-  vmid = var.transmission_lxcid
+  vmid = var.qbittorrent_lxcid
 
   rootfs {
     storage = "local-lvm"
@@ -15,12 +15,12 @@ resource "proxmox_lxc" "transmission" {
   }
 
   mountpoint {
-    mp      = "/opt/transmission/data"
+    mp      = "/opt/qbittorrent/config"
     size    = "8G"
     slot    = 0
     key     = "0"
-    storage = "/mnt/storage/appdata/transmission/config"
-    volume  = "/mnt/storage/appdata/transmission/config"
+    storage = "/mnt/storage/appdata/qbittorrent/config"
+    volume  = "/mnt/storage/appdata/qbittorrent/config"
   }
 
   mountpoint {
@@ -38,7 +38,7 @@ resource "proxmox_lxc" "transmission" {
     gw     = "192.168.1.1"
     ip     = "192.168.1.15/24"
     ip6    = "auto"
-    hwaddr = var.transmission_mac
+    hwaddr = var.qbittorrent_mac
   }
  
   lifecycle {
