@@ -1,11 +1,11 @@
 http:
   routers:
-    to-nzbhydra:
+    to-prowlarr:
       rule: "Host(`search.test`)"
-      service: nzbhydra
+      service: prowlarr
 
   services:
-    nzbhydra:
+    prowlarr:
       loadBalancer:
         servers:
-          - url: http://192.168.1.13:5076
+          - url: http://192.168.1.18:9696

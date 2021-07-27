@@ -1,5 +1,0 @@
----
-- hosts: nzbhydra
-  roles:
-    - { role: common, tags: all }
-    - { role: nzbhydra, tags: nzbhydra }

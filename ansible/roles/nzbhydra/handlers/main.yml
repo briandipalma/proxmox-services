@@ -1,5 +1,0 @@
-- name: Start NZBHydra
-  systemd:
-    name: nzbhydra
-    state: started
-    enabled: yes

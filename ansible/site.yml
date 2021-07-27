@@ -4,4 +4,3 @@
 - import_playbook: unifi.yml
 - import_playbook: jellyfin.yml
 - import_playbook: sonarr.yml
-- import_playbook: nzbhydra.yml
