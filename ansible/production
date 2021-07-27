@@ -1,12 +1,11 @@
 [common]
+192.168.1.2
+192.168.1.3
 traefik.test
+unifi.test
 jellyfin.test
 sonarr.test
 radarr.test
-nzbhydra.test
-192.168.1.2
-192.168.1.3
-192.168.1.6
 prowlarr.test
 nzbget.test
 
@@ -18,7 +17,7 @@ nzbget.test
 traefik.test
 
 [unifi]
-192.168.1.6
+unifi.test
 
 [jellyfin]
 jellyfin.test
@@ -28,9 +27,6 @@ sonarr.test
 
 [prowlarr]
 prowlarr.test
-
-[nzbhydra]
-nzbhydra.test
 
 [nzbget]
 nzbget.test
