@@ -45,11 +45,6 @@ variable "radarr_lxcid" {
   default = 503
 }
 
-variable "nzbhydra_lxcid" {
-  type = number
-  default = 504
-}
-
 variable "jackett_lxcid" {
   type = number
   default = 505
@@ -103,11 +98,6 @@ variable "sonarr_mac" {
 variable "radarr_mac" {
   type = string
   default = "36:67:C0:9C:48:9C"
-}
-
-variable "nzbhydra_mac" {
-  type = string
-  default = "06:82:C0:36:D1:FB"
 }
 
 variable "jackett_mac" {
