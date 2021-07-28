@@ -15,7 +15,7 @@ resource "proxmox_lxc" "qbittorrent" {
   }
 
   mountpoint {
-    mp      = "/opt/qbittorrent/config"
+    mp      = "/qbittorrent-config"
     size    = "8G"
     slot    = 0
     key     = "0"
@@ -35,8 +35,8 @@ resource "proxmox_lxc" "qbittorrent" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    gw     = "192.168.1.1"
-    ip     = "192.168.1.15/24"
+    gw     = var.gateway_ip
+    ip     = var.qbittorrent_ip
     ip6    = "auto"
     hwaddr = var.qbittorrent_mac
   }

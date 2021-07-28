@@ -21,6 +21,12 @@ variable "pub_ssh_key" {
   default = "~/.ssh/id_ed25519.pub"
 }
 
+variable "gateway_ip" {
+  description = "LXC gateway IP"
+  type = string
+  default = "192.168.1.1"
+}
+
 //
 // Services variables
 //
@@ -123,4 +129,9 @@ variable "unifi_mac" {
 variable "prowlarr_mac" {
   type = string
   default = "06:90:EE:CD:05:87"
+}
+
+variable "qbittorrent_ip" {
+  type = string
+  default = "192.168.1.15/24"
 }

@@ -1,0 +1,13 @@
+[Unit]
+Description=qBittorrent-nox service
+Documentation=man:qbittorrent-nox(1)
+Wants=network-online.target
+After=network-online.target nss-lookup.target
+
+[Service]
+Type=exec
+User=qbittorrent
+ExecStart=/usr/bin/qbittorrent-nox --profile=/qbittorrent-config
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,34 @@
+- name: Install packages
+  apt:
+    pkg:
+      - gnupg
+    state: latest
+
+- name: Create qBittorrent user
+  user:
+    name: qbittorrent
+    groups: qbittorrent
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+
+- name: Add qBittorrent stable repository from PPA and install its signing key
+  ansible.builtin.apt_repository:
+    repo: ppa:qbittorrent-team/qbittorrent-stable
+
+- name: Install qBittorrent
+  apt:
+    pkg:
+      - qbittorrent-nox
+    state: latest
+    update_cache: yes
+
+- name: Copy systemd service file to server
+  copy:
+    src: qbittorrent.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Start qBittorrent

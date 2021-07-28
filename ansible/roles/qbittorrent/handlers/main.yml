@@ -1,0 +1,5 @@
+- name: Start qBittorrent
+  systemd:
+    name: qbittorrent
+    state: started
+    enabled: yes
