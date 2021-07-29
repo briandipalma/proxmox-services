@@ -26,6 +26,9 @@ jellyfin.test
 [sonarr]
 sonarr.test
 
+[radarr]
+radarr.test
+
 [prowlarr]
 prowlarr.test
 

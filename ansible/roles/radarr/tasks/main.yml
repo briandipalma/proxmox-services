@@ -1,0 +1,44 @@
+- name: Install packages
+  apt:
+    pkg:
+      - curl
+      - mediainfo
+      - sqlite3
+    state: latest
+
+- name: Install Radarr
+  unarchive:
+    src: https://github.com/Radarr/Radarr/releases/download/v3.2.2.5080/Radarr.master.3.2.2.5080.linux-core-x64.tar.gz
+    dest: /opt/
+    remote_src: yes
+
+- name: Create Radarr group
+  group:
+    name: radarr
+    state: present
+
+- name: Create Radarr user
+  user:
+    name: radarr
+    groups: radarr
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+
+- name: Recursively change ownership of Radarr directory
+  ansible.builtin.file:
+    path: /opt/Radarr
+    state: directory
+    recurse: yes
+    owner: radarr
+    group: radarr
+
+- name: Copy systemd service file to server
+  copy:
+    src: radarr.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Start Radarr

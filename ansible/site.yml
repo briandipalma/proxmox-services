@@ -4,6 +4,7 @@
 - import_playbook: ./playbooks/unifi.yml
 - import_playbook: ./playbooks/jellyfin.yml
 - import_playbook: ./playbooks/sonarr.yml
+- import_playbook: ./playbooks/radarr.yml
 - import_playbook: ./playbooks/prowlarr.yml
 - import_playbook: ./playbooks/nzbget.yml
 - import_playbook: ./playbooks/qbittorrent.yml

@@ -17,7 +17,7 @@ resource "proxmox_lxc" "radarr" {
   }
 
   mountpoint {
-    mp      = "/var/lib/radarr"
+    mp      = "/Radarr-data"
     size    = "8G"
     slot    = 0
     key     = "0"
