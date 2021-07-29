@@ -131,6 +131,16 @@ variable "prowlarr_mac" {
   default = "06:90:EE:CD:05:87"
 }
 
+variable "sonarr_ip" {
+  type = string
+  default = "192.168.1.11/24"
+}
+
+variable "radarr_ip" {
+  type = string
+  default = "192.168.1.12/24"
+}
+
 variable "qbittorrent_ip" {
   type = string
   default = "192.168.1.15/24"

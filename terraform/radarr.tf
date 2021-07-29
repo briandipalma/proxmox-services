@@ -8,6 +8,7 @@ resource "proxmox_lxc" "radarr" {
   start = true
   onboot = true
   vmid = var.radarr_lxcid
+  memory = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {
@@ -36,7 +37,9 @@ resource "proxmox_lxc" "radarr" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = var.gateway_ip
+    ip     = var.radarr_ip
+    ip6    = "auto"
     hwaddr = var.radarr_mac
   }
   

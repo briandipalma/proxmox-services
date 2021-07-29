@@ -37,7 +37,9 @@ resource "proxmox_lxc" "sonarr" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = var.gateway_ip
+    ip     = var.sonarr_ip
+    ip6    = "auto"
     hwaddr = var.sonarr_mac
   }
 
