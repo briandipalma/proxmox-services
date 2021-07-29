@@ -1,6 +1,9 @@
 ---
-- import_playbook: pi-hole.yml
-- import_playbook: traefik.yml
-- import_playbook: unifi.yml
-- import_playbook: jellyfin.yml
-- import_playbook: sonarr.yml
+- import_playbook: ./playbooks/pi-hole.yml
+- import_playbook: ./playbooks/traefik.yml
+- import_playbook: ./playbooks/unifi.yml
+- import_playbook: ./playbooks/jellyfin.yml
+- import_playbook: ./playbooks/sonarr.yml
+- import_playbook: ./playbooks/prowlarr.yml
+- import_playbook: ./playbooks/nzbget.yml
+- import_playbook: ./playbooks/qbittorrent.yml
