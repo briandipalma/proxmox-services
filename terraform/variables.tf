@@ -135,3 +135,8 @@ variable "qbittorrent_ip" {
   type = string
   default = "192.168.1.15/24"
 }
+
+variable "prowlarr_ip" {
+  type = string
+  default = "192.168.1.18/24"
+}
