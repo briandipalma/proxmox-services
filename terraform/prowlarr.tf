@@ -8,6 +8,7 @@ resource "proxmox_lxc" "prowlarr" {
   start = true
   onboot = true
   vmid = var.prowlarr_lxcid
+  memory = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {
@@ -27,8 +28,8 @@ resource "proxmox_lxc" "prowlarr" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    gw     = "192.168.1.1"
-    ip     = "192.168.1.18/24"
+    gw     = var.gateway_ip
+    ip     = var.prowlarr_ip
     ip6    = "auto"
     hwaddr = var.prowlarr_mac
   }
