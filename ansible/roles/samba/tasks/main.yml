@@ -1,0 +1,5 @@
+- name: Install required packages
+  apt:
+    pkg:
+      - samba
+    state: latest

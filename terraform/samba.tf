@@ -15,10 +15,21 @@ resource "proxmox_lxc" "samba" {
     size    = "4G"
   }
 
+  mountpoint {
+    mp      = "/mnt/storage"
+    size    = "8G"
+    slot    = 0
+    key     = "0"
+    storage = "/mnt/storage"
+    volume  = "/mnt/storage"
+  }
+
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = var.gateway_ip
+    ip     = var.samba_ip
+    ip6    = "auto"
     hwaddr = var.samba_mac
   }
 }

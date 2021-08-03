@@ -9,6 +9,7 @@ radarr.test
 prowlarr.test
 nzbget.test
 qbittorrent.test
+samba.test
 
 [pi_hole]
 192.168.1.2
@@ -37,3 +38,6 @@ nzbget.test
 
 [qbittorrent]
 qbittorrent.test
+
+[samba]
+samba.test

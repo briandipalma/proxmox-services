@@ -8,3 +8,4 @@
 - import_playbook: ./playbooks/prowlarr.yml
 - import_playbook: ./playbooks/nzbget.yml
 - import_playbook: ./playbooks/qbittorrent.yml
+- import_playbook: ./playbooks/samba.yml
