@@ -32,4 +32,10 @@ resource "proxmox_lxc" "samba" {
     ip6    = "auto"
     hwaddr = var.samba_mac
   }
+
+  lifecycle {
+    ignore_changes = [
+      mountpoint[0].storage
+    ]
+  }
 }
