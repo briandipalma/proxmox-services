@@ -131,6 +131,11 @@ variable "prowlarr_mac" {
   default = "06:90:EE:CD:05:87"
 }
 
+variable "pi-hole-primary_ip" {
+  type = string
+  default = "192.168.1.2/24"
+}
+
 variable "sonarr_ip" {
   type = string
   default = "192.168.1.11/24"

@@ -19,7 +19,9 @@ resource "proxmox_lxc" "pi-hole-primary" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = var.gateway_ip
+    ip     = var.pi-hole-primary_ip
+    ip6    = "auto"
     hwaddr = var.pi-hole-primary_mac
   }
 }
