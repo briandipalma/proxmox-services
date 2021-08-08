@@ -136,6 +136,11 @@ variable "pi-hole-primary_ip" {
   default = "192.168.1.2/24"
 }
 
+variable "traefik_ip" {
+  type = string
+  default = "192.168.1.4/24"
+}
+
 variable "sonarr_ip" {
   type = string
   default = "192.168.1.11/24"
