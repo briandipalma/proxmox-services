@@ -146,6 +146,11 @@ variable "qbittorrent_ip" {
   default = "192.168.1.15/24"
 }
 
+variable "nzbget_ip" {
+  type = string
+  default = "192.168.1.16/24"
+}
+
 variable "samba_ip" {
   type = string
   default = "192.168.1.17/24"
