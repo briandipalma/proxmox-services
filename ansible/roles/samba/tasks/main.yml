@@ -3,3 +3,69 @@
     pkg:
       - samba
     state: latest
+
+- name: Copy smb.conf file
+  ansible.builtin.copy:
+    src: smb.conf
+    dest: /etc/samba/smb.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - Restart Samba
+
+- name: Create brian user
+  user:
+    name: brian
+    groups: sambashare
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+  register: brian_created
+
+- name: Create charlene user
+  user:
+    name: charlene
+    groups: sambashare
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+  register: charlene_created
+
+- name: Prompt for user brian's samba password
+  when: brian_created.changed
+  pause:
+    prompt: "Please enter user brian's samba password"
+    echo: no
+  register: result
+
+- set_fact:
+    brian_password: "{{ result.user_input }}"
+  when: brian_created.changed
+
+- name: Prompt for user charlene's samba password
+  when: charlene_created.changed
+  pause:
+    prompt: "Please enter user charlene's samba password"
+    echo: no
+  register: result_c
+
+- set_fact:
+    charlene_password: "{{ result_c.user_input }}"
+  when: charlene_created.changed
+
+- name: Configure brian user
+  when: brian_created.changed
+  shell: >
+    (pdbedit --user=brian 2>&1 > /dev/null)
+    || (echo '{{ brian_password }}'; echo '{{ brian_password }}')
+    | smbpasswd -s -a brian
+
+- name: Configure charlene user
+  when: charlene_created.changed
+  shell: >
+    (pdbedit --user=charlene 2>&1 > /dev/null)
+    || (echo '{{ charlene_password }}'; echo '{{ charlene_password }}')
+    | smbpasswd -s -a charlene

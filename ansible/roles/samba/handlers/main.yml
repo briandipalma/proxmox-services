@@ -1,0 +1,5 @@
+- name: Restart Samba
+  systemd:
+    name: smbd
+    state: restarted
+    daemon_reload: yes
