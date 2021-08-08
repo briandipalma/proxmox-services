@@ -2,6 +2,8 @@
 192.168.1.4 tv.test
 192.168.1.4 movies.test
 192.168.1.4 search.test
+192.168.1.4 nzbs.test
+192.168.1.4 torrents.test
 192.168.1.1 opnsense.test
 192.168.1.2 pi-hole-primary.test
 192.168.1.3 pi-hole-secondary.test
@@ -14,4 +16,5 @@
 192.168.1.15 qbittorrent.test
 192.168.1.16 nzbget.test
 192.168.1.17 samba.test
+192.168.1.17 files.test
 192.168.1.18 prowlarr.test
