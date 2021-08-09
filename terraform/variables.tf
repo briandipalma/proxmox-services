@@ -141,6 +141,11 @@ variable "traefik_ip" {
   default = "192.168.1.4/24"
 }
 
+variable "unifi_ip" {
+  type = string
+  default = "192.168.1.6/24"
+}
+
 variable "sonarr_ip" {
   type = string
   default = "192.168.1.11/24"

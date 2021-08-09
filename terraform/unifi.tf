@@ -19,8 +19,8 @@ resource "proxmox_lxc" "unifi" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    gw     = "192.168.1.1"
-    ip     = "192.168.1.6/24"
+    gw     = var.gateway_ip
+    ip     = var.unifi_ip
     ip6    = "auto"
     hwaddr = var.unifi_mac
   }
