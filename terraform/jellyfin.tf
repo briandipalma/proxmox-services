@@ -55,7 +55,9 @@ resource "proxmox_lxc" "jellyfin" {
   network {
     name   = "eth0"
     bridge = "vmbr0"
-    ip = "dhcp"
+    gw     = var.gateway_ip
+    ip     = var.jellyfin_ip
+    ip6    = "auto"
     hwaddr = var.jellyfin_mac
   }
   

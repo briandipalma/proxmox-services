@@ -146,6 +146,11 @@ variable "unifi_ip" {
   default = "192.168.1.6/24"
 }
 
+variable "jellyfin_ip" {
+  type = string
+  default = "192.168.1.10/24"
+}
+
 variable "sonarr_ip" {
   type = string
   default = "192.168.1.11/24"
