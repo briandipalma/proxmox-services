@@ -3,3 +3,9 @@
     name: prowlarr
     state: started
     enabled: yes
+
+- name: Restart Prowlarr
+  systemd:
+    name: prowlarr
+    state: restarted
+    daemon_reload: yes
