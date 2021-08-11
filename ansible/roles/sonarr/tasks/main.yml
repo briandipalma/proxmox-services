@@ -1,3 +1,17 @@
+- name: Create Sonarr group
+  group:
+    name: sonarr
+    state: present
+
+- name: Create Sonarr user
+  user:
+    name: sonarr
+    groups: sonarr
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+
 - name: Install packages
   apt:
     pkg:

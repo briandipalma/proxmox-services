@@ -1,0 +1,7 @@
+- name: Change ownership and set correct file/directory permissions
+  include_tasks: setup_files.yml
+  loop:
+    - /mnt/storage/media/tv
+    - /mnt/storage/media/movies
+    - /mnt/storage/downloads/usenet
+    - /mnt/storage/downloads/torrents

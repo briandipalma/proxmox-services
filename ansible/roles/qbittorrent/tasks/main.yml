@@ -1,8 +1,7 @@
-- name: Install packages
-  apt:
-    pkg:
-      - gnupg
-    state: latest
+- name: Create qBittorrent group
+  group:
+    name: qbittorrent
+    state: present
 
 - name: Create qBittorrent user
   user:
@@ -12,6 +11,12 @@
     append: yes
     state: present
     create_home: no
+
+- name: Install packages
+  apt:
+    pkg:
+      - gnupg
+    state: latest
 
 - name: Add qBittorrent stable repository from PPA and install its signing key
   ansible.builtin.apt_repository:

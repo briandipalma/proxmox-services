@@ -10,6 +10,7 @@ prowlarr.test
 nzbget.test
 qbittorrent.test
 samba.test
+pve.test
 
 [pi_hole]
 192.168.1.2
@@ -41,3 +42,6 @@ qbittorrent.test
 
 [samba]
 samba.test
+
+[pve]
+pve.test
