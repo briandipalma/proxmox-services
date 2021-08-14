@@ -8,7 +8,7 @@ resource "proxmox_lxc" "qbittorrent" {
   start = true
   onboot = true
   vmid = var.qbittorrent_lxcid
-  memory = 3072
+  memory = 5120
 
   rootfs {
     storage = "local-lvm"
