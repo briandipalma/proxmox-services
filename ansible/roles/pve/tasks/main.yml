@@ -5,3 +5,25 @@
     - /mnt/storage/media/movies
     - /mnt/storage/downloads/usenet
     - /mnt/storage/downloads/torrents
+
+- name: Recursively change ownership of scratch share directory
+  ansible.builtin.file:
+    path: /mnt/storage/shares/scratch
+    state: directory
+    recurse: yes
+    owner: "100000"
+    group: "100118"
+
+- name: Recursively change ownership of brian share directory
+  ansible.builtin.file:
+    path: /mnt/storage/shares/brian
+    state: directory
+    recurse: yes
+    owner: "101000"
+
+- name: Recursively change ownership of charlene share directory
+  ansible.builtin.file:
+    path: /mnt/storage/shares/charlene
+    state: directory
+    recurse: yes
+    owner: "101001"
