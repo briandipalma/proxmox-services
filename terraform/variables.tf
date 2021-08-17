@@ -81,6 +81,11 @@ variable "prowlarr_lxcid" {
   default = 511
 }
 
+variable "tdarr_lxcid" {
+  type = number
+  default = 512
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -131,6 +136,11 @@ variable "prowlarr_mac" {
   default = "06:90:EE:CD:05:87"
 }
 
+variable "tdarr_mac" {
+  type = string
+  default = "2A:F0:E4:07:39:3B"
+}
+
 variable "pi-hole-primary_ip" {
   type = string
   default = "192.168.1.2/24"
@@ -179,4 +189,9 @@ variable "samba_ip" {
 variable "prowlarr_ip" {
   type = string
   default = "192.168.1.18/24"
+}
+
+variable "tdarr_ip" {
+  type = string
+  default = "192.168.1.19/24"
 }
