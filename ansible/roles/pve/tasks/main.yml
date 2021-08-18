@@ -1,3 +1,19 @@
+- name: Download Ubuntu 20.04 (Focal Fossa) LXC image
+  ansible.builtin.command:
+    argv:
+      - pveam
+      - download
+      - local
+      - ubuntu-20.04-standard_20.04-1_amd64.tar.gz
+
+- name: Download Ubuntu 18.04 (Bionic Beaver) LXC image
+  ansible.builtin.command:
+    argv:
+      - pveam
+      - download
+      - local
+      - ubuntu-18.04-standard_18.04.1-1_amd64.tar.gz
+
 - name: Change ownership and set correct file/directory permissions
   include_tasks: setup_files.yml
   loop:
