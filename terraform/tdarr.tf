@@ -1,7 +1,7 @@
 resource "proxmox_lxc" "tdarr" {
   target_node  = "pve"
   hostname     = "tdarr"
-  ostemplate   = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
+  ostemplate   = "local:vztmpl/ubuntu-18.04-standard_18.04.1-1_amd64.tar.gz"
   unprivileged = true
   ostype = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
