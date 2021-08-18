@@ -1,4 +1,5 @@
 ---
+- import_playbook: ./playbooks/pve.yml
 - import_playbook: ./playbooks/pi-hole.yml
 - import_playbook: ./playbooks/traefik.yml
 - import_playbook: ./playbooks/unifi.yml
@@ -9,4 +10,3 @@
 - import_playbook: ./playbooks/nzbget.yml
 - import_playbook: ./playbooks/qbittorrent.yml
 - import_playbook: ./playbooks/samba.yml
-- import_playbook: ./playbooks/pve.yml
