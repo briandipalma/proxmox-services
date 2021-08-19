@@ -10,3 +10,4 @@
 - import_playbook: ./playbooks/nzbget.yml
 - import_playbook: ./playbooks/qbittorrent.yml
 - import_playbook: ./playbooks/samba.yml
+- import_playbook: ./playbooks/tdarr.yml

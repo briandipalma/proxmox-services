@@ -1,0 +1,5 @@
+---
+- hosts: tdarr
+  roles:
+    - { role: common, tags: all }
+    - { role: tdarr, tags: tdarr }

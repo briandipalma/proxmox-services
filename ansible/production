@@ -11,6 +11,7 @@ nzbget.test
 qbittorrent.test
 samba.test
 pve.test
+tdarr.test
 
 [pi_hole]
 192.168.1.2
@@ -45,3 +46,6 @@ samba.test
 
 [pve]
 pve.test
+
+[tdarr]
+tdarr.test

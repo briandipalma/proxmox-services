@@ -1,0 +1,36 @@
+- name: Install packages
+  apt:
+    pkg:
+      - unzip
+      - gnupg
+      - software-properties-common
+    state: latest
+
+- name: Add HandBrake stable repository from PPA
+  ansible.builtin.apt_repository:
+    repo: ppa:stebbins/handbrake-releases
+
+- name: Install video transcoding packages
+  apt:
+    pkg:
+      - ffmpeg
+      - handbrake-cli
+    state: latest
+    update_cache: yes
+
+- name: Create the Tdarr directory
+  ansible.builtin.file:
+    path: /opt/Tdarr
+    state: directory
+
+- name: Install Tdarr Updater
+  unarchive:
+    src: https://f000.backblazeb2.com/file/tdarrs/versions/2.00.08/linux_x64/Tdarr_Updater.zip
+    dest: /opt/Tdarr
+    remote_src: yes
+
+- name: Download Tdarr Node and Server
+  ansible.builtin.command:
+    argv:
+      - /opt/Tdarr/Tdarr_Updater
+    creates: /opt/Tdarr/Tdarr_Node
