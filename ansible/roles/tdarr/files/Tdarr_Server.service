@@ -1,0 +1,11 @@
+[Unit]
+Description=Tdarr Server
+After=network.target
+
+[Service]
+User=tdarr
+Group=tdarr
+Restart=on-failure
+RestartSec=3
+WorkingDirectory=/opt/Tdarr/
+ExecStart=/opt/Tdarr/Tdarr_Server/Tdarr_Server
