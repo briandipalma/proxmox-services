@@ -86,6 +86,11 @@ variable "tdarr_lxcid" {
   default = 512
 }
 
+variable "bazarr_lxcid" {
+  type = number
+  default = 513
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -141,6 +146,11 @@ variable "tdarr_mac" {
   default = "2A:F0:E4:07:39:3B"
 }
 
+variable "bazarr_mac" {
+  type = string
+  default = "B2:BE:AF:7B:2F:9F"
+}
+
 variable "pi-hole-primary_ip" {
   type = string
   default = "192.168.1.2/24"
@@ -194,4 +204,9 @@ variable "prowlarr_ip" {
 variable "tdarr_ip" {
   type = string
   default = "192.168.1.19/24"
+}
+
+variable "bazarr_ip" {
+  type = string
+  default = "192.168.1.20/24"
 }
