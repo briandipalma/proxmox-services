@@ -17,7 +17,7 @@ resource "proxmox_lxc" "tdarr" {
   }
 
   mountpoint {
-    mp      = "/var/lib/tdarr"
+    mp      = "/opt/Tdarr/configs"
     size    = "8G"
     slot    = 0
     key     = "0"

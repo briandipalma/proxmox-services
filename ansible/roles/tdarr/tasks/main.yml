@@ -18,11 +18,6 @@
     state: latest
     update_cache: yes
 
-- name: Create the Tdarr directory
-  ansible.builtin.file:
-    path: /opt/Tdarr
-    state: directory
-
 - name: Install Tdarr Updater
   unarchive:
     src: https://f000.backblazeb2.com/file/tdarrs/versions/2.00.08/linux_x64/Tdarr_Updater.zip
