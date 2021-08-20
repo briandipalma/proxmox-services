@@ -32,10 +32,11 @@
 
 - name: Recursively change ownership of videos share directory
   ansible.builtin.file:
-    path: /mnt/storage/shares/videos
+    path: /mnt/storage/media/videos
     state: directory
     recurse: yes
-    owner: "100000"
+    owner: "101000"
+    group: "100118"
 
 - name: Recursively change ownership of brian share directory
   ansible.builtin.file:
@@ -56,4 +57,5 @@
     path: /mnt/storage/appdata/tdarr/config
     state: directory
     recurse: yes
-    owner: "100000"
+    owner: "101000"
+    group: "101000"
