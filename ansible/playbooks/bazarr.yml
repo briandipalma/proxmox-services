@@ -1,0 +1,5 @@
+---
+- hosts: bazarr
+  roles:
+    - { role: common, tags: all }
+    - { role: bazarr, tags: bazarr }

@@ -1,0 +1,5 @@
+- name: Start Bazarr
+  systemd:
+    name: bazarr
+    state: restarted
+    daemon_reload: yes

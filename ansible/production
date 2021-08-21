@@ -12,6 +12,7 @@ qbittorrent.test
 samba.test
 pve.test
 tdarr.test
+bazarr.test
 
 [pi_hole]
 192.168.1.2
@@ -49,3 +50,6 @@ pve.test
 
 [tdarr]
 tdarr.test
+
+[bazarr]
+bazarr.test

@@ -11,3 +11,4 @@
 - import_playbook: ./playbooks/qbittorrent.yml
 - import_playbook: ./playbooks/samba.yml
 - import_playbook: ./playbooks/tdarr.yml
+- import_playbook: ./playbooks/bazarr.yml

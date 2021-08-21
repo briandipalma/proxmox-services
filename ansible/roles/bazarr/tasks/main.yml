@@ -1,0 +1,54 @@
+- name: Create Bazarr group
+  group:
+    name: bazarr
+    state: present
+
+- name: Create Bazarr user
+  user:
+    name: bazarr
+    groups: bazarr
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+
+- name: Install packages
+  apt:
+    pkg:
+      - python3-pip
+      - python3-distutils
+      - unzip
+    state: latest
+
+- name: Create Bazarr directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/bazarr
+    state: directory
+    mode: 0755
+
+- name: Install Bazarr
+  unarchive:
+    src: https://github.com/morpheus65535/bazarr/releases/download/v0.9.8-beta.5/bazarr.zip
+    dest: /opt/bazarr
+    remote_src: yes
+
+- name: Install specified python requirements
+  pip:
+    requirements: /opt/bazarr/requirements.txt
+
+- name: Recursively change ownership of Bazarr directory
+  ansible.builtin.file:
+    path: /opt/bazarr/
+    state: directory
+    recurse: yes
+    owner: bazarr
+    group: bazarr
+
+- name: Copy Bazarr systemd service file
+  copy:
+    src: bazarr.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Start Bazarr
