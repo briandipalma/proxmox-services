@@ -13,6 +13,7 @@ samba.test
 pve.test
 tdarr.test
 bazarr.test
+beets.test
 
 [pi_hole]
 192.168.1.2
@@ -53,3 +54,6 @@ tdarr.test
 
 [bazarr]
 bazarr.test
+
+[beets]
+beets.test

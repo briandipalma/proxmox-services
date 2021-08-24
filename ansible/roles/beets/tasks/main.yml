@@ -1,0 +1,34 @@
+- name: Install packages
+  apt:
+    pkg:
+      - python3-pip
+      - unzip
+      - libgstreamer1.0-0
+      - python-gi
+      # To persist long running import sessions
+      - tmux
+
+- name: Install beets
+  pip:
+    name: beets
+
+- name: Install Discogs client
+  pip:
+    name: discogs_client
+
+- name: Install pyacoustid
+  pip:
+    name: pyacoustid
+
+- name: Install pylast
+  pip:
+    name: pylast
+
+- name: Install Chromaprint fpcalc
+  unarchive:
+    src: https://github.com/acoustid/chromaprint/releases/download/v1.5.0/chromaprint-fpcalc-1.5.0-linux-x86_64.tar.gz
+    dest: /usr/local/bin
+    remote_src: yes
+    extra_opts:
+      # We want to strip the directory and only take the executable
+      - --strip-components=2
