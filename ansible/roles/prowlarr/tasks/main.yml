@@ -7,7 +7,7 @@
 
 - name: Install Prowlarr
   unarchive:
-    src: https://github.com/Prowlarr/Prowlarr/releases/download/v0.1.0.768/Prowlarr.develop.0.1.0.768.linux-core-x64.tar.gz
+    src: https://github.com/Prowlarr/Prowlarr/releases/download/v0.1.1.875/Prowlarr.develop.0.1.1.875.linux-core-x64.tar.gz
     dest: /opt/
     remote_src: yes
   notify:
