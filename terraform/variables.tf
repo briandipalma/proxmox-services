@@ -96,6 +96,11 @@ variable "beets_lxcid" {
   default = 514
 }
 
+variable "network_lxcid" {
+  type = number
+  default = 515
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -161,6 +166,11 @@ variable "beets_mac" {
   default = "7A:61:4E:F6:ED:3A"
 }
 
+variable "network_mac" {
+  type = string
+  default = "42:98:73:F5:A2:A8"
+}
+
 variable "pi-hole-primary_ip" {
   type = string
   default = "192.168.1.2/24"
@@ -224,4 +234,9 @@ variable "bazarr_ip" {
 variable "beets_ip" {
   type = string
   default = "192.168.1.21/24"
+}
+
+variable "network_ip" {
+  type = string
+  default = "192.168.1.22/24"
 }
