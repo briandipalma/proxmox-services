@@ -1,0 +1,11 @@
+- name: Install packages
+  apt:
+    pkg:
+      - curl
+    state: latest
+
+- name: Update DuckDNS IP address
+  ansible.builtin.cron:
+    name: "DuckDNS"
+    minute: "*/5"
+    job: "/duckdns/duck.sh >/dev/null 2>&1"

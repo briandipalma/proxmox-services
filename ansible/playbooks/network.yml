@@ -1,0 +1,5 @@
+---
+- hosts: network
+  roles:
+    - { role: common, tags: all }
+    - { role: network, tags: network }
