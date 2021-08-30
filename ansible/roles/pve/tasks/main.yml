@@ -75,3 +75,11 @@
     recurse: yes
     owner: "100000"
     group: "100000"
+
+- name: Recursively change ownership of Traefik config directory
+  ansible.builtin.file:
+    path: /mnt/storage/appdata/traefik/config
+    state: directory
+    recurse: yes
+    owner: "101000"
+    group: "101000"

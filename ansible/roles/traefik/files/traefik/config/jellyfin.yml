@@ -3,6 +3,11 @@ http:
     to-jellyfin:
       rule: "Host(`media.test`)"
       service: jellyfin
+    to-jellyfin-secure:
+      rule: "Host(`media.dipalma.duckdns.org`)"
+      service: jellyfin
+      tls:
+        certResolver: letsencrypt
 
   services:
     jellyfin:

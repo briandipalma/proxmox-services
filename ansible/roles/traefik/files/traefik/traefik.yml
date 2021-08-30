@@ -9,3 +9,11 @@ providers:
   file:
     directory: /etc/traefik/config
     watch: true
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: ""
+      storage: /traefik-config/acme.json
+      httpChallenge:
+        entryPoint: web

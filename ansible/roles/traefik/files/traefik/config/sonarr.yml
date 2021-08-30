@@ -3,6 +3,11 @@ http:
     to-sonarr:
       rule: "Host(`tv.test`)"
       service: sonarr
+    to-sonarr-secure:
+      rule: "Host(`tv.dipalma.duckdns.org`)"
+      service: sonarr
+      tls:
+        certResolver: letsencrypt
 
   services:
     sonarr:

@@ -30,6 +30,8 @@
   copy:
     src: traefik
     dest: /etc
+  notify:
+    - Restart Traefik
 
 - name: Copy systemd service file to server
   copy:
