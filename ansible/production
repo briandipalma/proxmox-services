@@ -15,6 +15,7 @@ tdarr.test
 bazarr.test
 beets.test
 network.test
+work-docker.test
 
 [pi_hole]
 192.168.1.2
@@ -61,3 +62,6 @@ beets.test
 
 [network]
 network.test
+
+[work_docker]
+work-docker.test

@@ -101,6 +101,11 @@ variable "network_lxcid" {
   default = 515
 }
 
+variable "work_docker_lxcid" {
+  type = number
+  default = 516
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -171,6 +176,11 @@ variable "network_mac" {
   default = "42:98:73:F5:A2:A8"
 }
 
+variable "work_docker_mac" {
+  type = string
+  default = "F6:82:27:AF:F1:47"
+}
+
 variable "pi-hole-primary_ip" {
   type = string
   default = "192.168.1.2/24"
@@ -239,4 +249,9 @@ variable "beets_ip" {
 variable "network_ip" {
   type = string
   default = "192.168.1.22/24"
+}
+
+variable "work_docker_ip" {
+  type = string
+  default = "192.168.1.23/24"
 }

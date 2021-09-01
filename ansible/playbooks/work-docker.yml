@@ -1,0 +1,5 @@
+---
+- hosts: work_docker
+  roles:
+    - { role: common, tags: all }
+    - { role: work-docker, tags: work-docker }
