@@ -10,6 +10,10 @@ providers:
     directory: /etc/traefik/config
     watch: true
 
+api:
+  dashboard: true
+  insecure: true
+
 certificatesResolvers:
   letsencrypt:
     acme:
