@@ -1,6 +1,6 @@
 - name: Install Traefik
   unarchive:
-    src: https://github.com/traefik/traefik/releases/download/v2.5.1/traefik_v2.5.1_linux_amd64.tar.gz
+    src: https://github.com/traefik/traefik/releases/download/v2.5.2/traefik_v2.5.2_linux_amd64.tar.gz
     dest: /usr/local/bin
     remote_src: yes
   notify:
