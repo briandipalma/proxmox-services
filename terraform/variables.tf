@@ -106,6 +106,11 @@ variable "work_docker_lxcid" {
   default = 516
 }
 
+variable "ipa_lxcid" {
+  type = number
+  default = 517
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -181,6 +186,11 @@ variable "work_docker_mac" {
   default = "F6:82:27:AF:F1:47"
 }
 
+variable "ipa_mac" {
+  type = string
+  default = "76:96:E0:16:62:4F"
+}
+
 variable "pi-hole-primary_ip" {
   type = string
   default = "192.168.1.2/24"
@@ -254,4 +264,9 @@ variable "network_ip" {
 variable "work_docker_ip" {
   type = string
   default = "192.168.1.23/24"
+}
+
+variable "ipa_ip" {
+  type = string
+  default = "192.168.1.24/24"
 }
