@@ -1,0 +1,5 @@
+- name: Install packages
+  apt:
+    pkg:
+      - rng-tools
+    state: latest

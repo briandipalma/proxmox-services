@@ -16,6 +16,7 @@ bazarr.test
 beets.test
 network.test
 work-docker.test
+ipa.test
 
 [pi_hole]
 192.168.1.2
@@ -65,3 +66,6 @@ network.test
 
 [work_docker]
 work-docker.test
+
+[ipa]
+ipa.test
