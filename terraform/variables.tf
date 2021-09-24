@@ -111,6 +111,11 @@ variable "ipa_lxcid" {
   default = 517
 }
 
+variable "keycloak_lxcid" {
+  type = number
+  default = 518
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -191,6 +196,11 @@ variable "ipa_mac" {
   default = "76:96:E0:16:62:4F"
 }
 
+variable "keycloak_mac" {
+  type = string
+  default = "2A:53:05:0D:28:29"
+}
+
 variable "pi-hole-primary_ip" {
   type = string
   default = "192.168.1.2/24"
@@ -269,4 +279,8 @@ variable "work_docker_ip" {
 variable "ipa_ip" {
   type = string
   default = "192.168.1.24/24"
+}
+variable "keycloak_ip" {
+  type = string
+  default = "192.168.1.25/24"
 }
