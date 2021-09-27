@@ -17,6 +17,7 @@ beets.test
 network.test
 work-docker.test
 ipa.test
+keycloak.test
 
 [pi_hole]
 192.168.1.2
@@ -69,3 +70,6 @@ work-docker.test
 
 [ipa]
 ipa.test
+
+[keycloak]
+keycloak.test

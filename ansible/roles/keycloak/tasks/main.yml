@@ -1,0 +1,52 @@
+- name: Install packages
+  apt:
+    pkg:
+      - openjdk-16-jdk
+
+- name: Create Keycloak group
+  group:
+    name: keycloak
+    state: present
+
+- name: Create Keycloak user
+  user:
+    name: keycloak
+    groups: keycloak
+    shell: /sbin/nologin
+    append: yes
+    state: present
+    create_home: no
+
+- name: Create Keycloak directory if it does not exist
+  ansible.builtin.file:
+    path: /opt/keycloak
+    state: directory
+    mode: 0755
+
+- name: Install Keycloak
+  unarchive:
+    src: https://github.com/keycloak/keycloak/releases/download/15.0.2/keycloak-15.0.2.tar.gz
+    dest: /opt/keycloak
+    remote_src: yes
+    extra_opts:
+      # We want to strip the directory and only take the executable
+      - --strip-components=1
+  notify:
+    - Restart Keycloak
+
+- name: Recursively change ownership of Keycloak directory
+  ansible.builtin.file:
+    path: /opt/keycloak
+    state: directory
+    recurse: yes
+    owner: keycloak
+    group: keycloak
+
+- name: Copy systemd service file to server
+  copy:
+    src: keycloak.service
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Start Keycloak
