@@ -14,17 +14,20 @@
 
 - name: Download NZBGet
   get_url:
-    url: https://github.com/nzbget/nzbget/releases/download/v21.1/nzbget-21.1-bin-linux.run
-    dest: /nzbget-bin-linux.run
+    url: https://github.com/nzbget/nzbget/releases/download/v21.2-r2333/nzbget-21.2-testing-r2333-bin-linux.run
+    dest: /nzbget-21.2-r2333-bin-linux.run
     mode: 0744
-   
+  register: new_nzb_dowloaded
+
 - name: Install NZBGet if not already installed
+  when: new_nzb_dowloaded.changed
   ansible.builtin.command:
     argv:
-      - /nzbget-bin-linux.run
+      - /nzbget-21.2-r2333-bin-linux.run
       - --destdir
       - /opt/nzbget
-    creates: /opt/nzbget
+  notify:
+    Restart NZBGet
 
 - name: Recursively change ownership of NZBGet directory
   ansible.builtin.file:
