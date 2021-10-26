@@ -116,6 +116,11 @@ variable "keycloak_lxcid" {
   default = 518
 }
 
+variable "dev_lxcid" {
+  type = number
+  default = 519
+}
+
 variable "traefik_mac" {
   type = string
   default = "B6:1A:E1:C6:86:03"
@@ -201,6 +206,11 @@ variable "keycloak_mac" {
   default = "2A:53:05:0D:28:29"
 }
 
+variable "dev_mac" {
+  type = string
+  default = "9A:AD:16:AF:35:26"
+}
+
 variable "pi-hole-primary_ip" {
   type = string
   default = "192.168.1.2/24"
@@ -280,7 +290,13 @@ variable "ipa_ip" {
   type = string
   default = "192.168.1.24/24"
 }
+
 variable "keycloak_ip" {
   type = string
   default = "192.168.1.25/24"
+}
+
+variable "dev_ip" {
+  type = string
+  default = "192.168.1.26/24"
 }
