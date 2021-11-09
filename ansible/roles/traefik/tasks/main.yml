@@ -1,11 +1,12 @@
+---
 - name: Install Traefik
   unarchive:
-    src: https://github.com/traefik/traefik/releases/download/v2.5.3/traefik_v2.5.3_linux_amd64.tar.gz
+    src: https://github.com/traefik/traefik/releases/download/v2.5.4/traefik_v2.5.4_linux_amd64.tar.gz
     dest: /usr/local/bin
-    remote_src: yes
+    remote_src: true
   notify:
     - Restart Traefik
-    
+
 - name: Create Traefik group
   group:
     name: traefik
@@ -14,11 +15,11 @@
 - name: Create Traefik user
   user:
     name: traefik
-    groups: traefik
+    group: traefik
     shell: /sbin/nologin
-    append: yes
+    append: true
     state: present
-    create_home: no
+    create_home: false
 
 - name: Set port binding capability on Traefik
   community.general.capabilities:
