@@ -1,3 +1,4 @@
+---
 entryPoints:
   web:
     address: :80
