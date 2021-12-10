@@ -1,3 +1,4 @@
+---
 - name: Install packages
   apt:
     pkg:
@@ -11,11 +12,11 @@
 - name: Create Keycloak user
   user:
     name: keycloak
-    groups: keycloak
+    group: keycloak
     shell: /sbin/nologin
-    append: yes
+    append: true
     state: present
-    create_home: no
+    create_home: false
 
 - name: Create Keycloak directory if it does not exist
   ansible.builtin.file:
@@ -25,9 +26,9 @@
 
 - name: Install Keycloak
   unarchive:
-    src: https://github.com/keycloak/keycloak/releases/download/15.0.2/keycloak-15.0.2.tar.gz
+    src: https://github.com/keycloak/keycloak/releases/download/15.1.0/keycloak-15.1.0.tar.gz
     dest: /opt/keycloak
-    remote_src: yes
+    remote_src: true
     extra_opts:
       # We want to strip the directory and only take the executable
       - --strip-components=1
@@ -38,7 +39,7 @@
   ansible.builtin.file:
     path: /opt/keycloak
     state: directory
-    recurse: yes
+    recurse: true
     owner: keycloak
     group: keycloak
 
