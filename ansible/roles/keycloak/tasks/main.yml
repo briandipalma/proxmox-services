@@ -26,7 +26,7 @@
 
 - name: Install Keycloak
   unarchive:
-    src: https://github.com/keycloak/keycloak/releases/download/16.0.0/keycloak-16.0.0.tar.gz
+    src: https://github.com/keycloak/keycloak/releases/download/16.1.0/keycloak-16.1.0.tar.gz
     dest: /opt/keycloak
     remote_src: true
     extra_opts:
