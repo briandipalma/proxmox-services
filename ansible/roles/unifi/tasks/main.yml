@@ -1,7 +1,8 @@
+---
 - name: Install required packages
   apt:
     pkg:
-      - ca-certificates  
+      - ca-certificates
       - apt-transport-https
       - gnupg
       - openjdk-8-jre-headless
@@ -38,4 +39,4 @@
     pkg:
       - unifi
     state: latest
-    update_cache: yes
+    update_cache: true
