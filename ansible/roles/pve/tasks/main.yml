@@ -1,3 +1,4 @@
+---
 - name: Download Ubuntu 20.04 (Focal Fossa) LXC image
   ansible.builtin.command:
     argv:
@@ -26,7 +27,7 @@
   ansible.builtin.file:
     path: /mnt/storage/shares/scratch
     state: directory
-    recurse: yes
+    recurse: true
     owner: "100000"
     group: "100118"
 
@@ -34,7 +35,7 @@
   ansible.builtin.file:
     path: /mnt/storage/media/videos
     state: directory
-    recurse: yes
+    recurse: true
     owner: "101000"
     group: "100118"
 
@@ -42,21 +43,21 @@
   ansible.builtin.file:
     path: /mnt/storage/shares/brian
     state: directory
-    recurse: yes
+    recurse: true
     owner: "101000"
 
 - name: Recursively change ownership of charlene share directory
   ansible.builtin.file:
     path: /mnt/storage/shares/charlene
     state: directory
-    recurse: yes
+    recurse: true
     owner: "101001"
 
 - name: Recursively change ownership of Tdarr config directory
   ansible.builtin.file:
     path: /mnt/storage/appdata/tdarr/config
     state: directory
-    recurse: yes
+    recurse: true
     owner: "101000"
     group: "101000"
 
@@ -64,7 +65,7 @@
   ansible.builtin.file:
     path: /mnt/storage/appdata/beets/config
     state: directory
-    recurse: yes
+    recurse: true
     owner: "100000"
     group: "100000"
 
@@ -72,7 +73,7 @@
   ansible.builtin.file:
     path: /mnt/storage/appdata/duckdns/config
     state: directory
-    recurse: yes
+    recurse: true
     owner: "100000"
     group: "100000"
 
@@ -80,6 +81,6 @@
   ansible.builtin.file:
     path: /mnt/storage/appdata/traefik/config
     state: directory
-    recurse: yes
+    recurse: true
     owner: "101000"
     group: "101000"
