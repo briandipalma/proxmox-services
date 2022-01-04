@@ -1,7 +1,7 @@
 resource "proxmox_lxc" "jellyfin" {
   target_node     = "pve"
   hostname        = "jellyfin"
-  ostemplate      = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
+  ostemplate      = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
   unprivileged    = true
   ostype          = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
@@ -44,7 +44,7 @@ resource "proxmox_lxc" "jellyfin" {
   }
 
   mountpoint {
-    mp      = "/mnt/media"
+    mp      = "/mnt/storage/media"
     size    = "8G"
     slot    = 3
     key     = "3"

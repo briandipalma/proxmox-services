@@ -1,3 +1,4 @@
+---
 - name: Install packages
   apt:
     pkg:
@@ -10,9 +11,9 @@
     repo: "{{ item }}"
     state: present
   loop:
-    - "deb http://archive.ubuntu.com/ubuntu/ groovy universe"
-    - "deb http://archive.ubuntu.com/ubuntu/ groovy-updates universe"
-    - "deb http://security.ubuntu.com/ubuntu/ groovy-security universe"
+    - "deb http://archive.ubuntu.com/ubuntu/ focal universe"
+    - "deb http://archive.ubuntu.com/ubuntu/ focal-updates universe"
+    - "deb http://security.ubuntu.com/ubuntu/ focal-security universe"
 
 - name: Add the Jellyfin repository Apt signing key
   ansible.builtin.apt_key:
@@ -22,14 +23,14 @@
 
 - name: Add the Jellyfin repository
   apt_repository:
-    repo: deb [arch=amd64] https://repo.jellyfin.org/ubuntu groovy main
+    repo: deb [arch=amd64] https://repo.jellyfin.org/ubuntu focal main
     filename: jellyfin
     state: present
 
 - name: Update repo cache
   changed_when: false
   apt:
-    update_cache: yes
+    update_cache: true
 
 - name: Install Jellyfin package
   apt:
