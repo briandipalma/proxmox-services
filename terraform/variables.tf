@@ -233,7 +233,7 @@ variable "jellyfin_ip" {
 
 variable "sonarr_ip" {
   type    = string
-  default = "192.168.1.11/24"
+  default = "192.168.1.22/24"
 }
 
 variable "radarr_ip" {
@@ -258,7 +258,7 @@ variable "samba_ip" {
 
 variable "prowlarr_ip" {
   type    = string
-  default = "192.168.1.28/24"
+  default = "192.168.1.29/24"
 }
 
 variable "tdarr_ip" {
@@ -278,7 +278,7 @@ variable "beets_ip" {
 
 variable "network_ip" {
   type    = string
-  default = "192.168.1.22/24"
+  default = "192.168.1.33/24"
 }
 
 variable "work_docker_ip" {

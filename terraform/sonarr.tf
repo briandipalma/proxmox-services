@@ -1,14 +1,14 @@
 resource "proxmox_lxc" "sonarr" {
-  target_node  = "pve"
-  hostname     = "sonarr"
-  ostemplate   = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
-  unprivileged = true
-  ostype = "ubuntu"
+  target_node     = "pve"
+  hostname        = "sonarr"
+  ostemplate      = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
+  unprivileged    = true
+  ostype          = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
-  start = true
-  onboot = true
-  vmid = var.sonarr_lxcid
-  memory = 1024
+  start           = true
+  onboot          = true
+  vmid            = var.sonarr_lxcid
+  memory          = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {
