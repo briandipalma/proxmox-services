@@ -253,7 +253,7 @@ variable "nzbget_ip" {
 
 variable "samba_ip" {
   type    = string
-  default = "192.168.1.17/24"
+  default = "192.168.1.27/24"
 }
 
 variable "prowlarr_ip" {
