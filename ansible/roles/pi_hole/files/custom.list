@@ -17,7 +17,7 @@
 192.168.1.16 nzbget.test
 192.168.1.17 samba.test
 192.168.1.17 files.test
-192.168.1.18 prowlarr.test
+192.168.1.28 prowlarr.test
 192.168.1.19 tdarr.test
 192.168.1.20 bazarr.test
 192.168.1.21 beets.test
