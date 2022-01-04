@@ -1,3 +1,4 @@
+---
 - name: Create Bazarr group
   group:
     name: bazarr
@@ -8,9 +9,9 @@
     name: bazarr
     groups: bazarr
     shell: /sbin/nologin
-    append: yes
+    append: true
     state: present
-    create_home: no
+    create_home: false
 
 - name: Install packages
   apt:
@@ -28,9 +29,9 @@
 
 - name: Install Bazarr
   unarchive:
-    src: https://github.com/morpheus65535/bazarr/releases/download/v0.9.8-beta.5/bazarr.zip
+    src: https://github.com/morpheus65535/bazarr/releases/download/v1.0.2/bazarr.zip
     dest: /opt/bazarr
-    remote_src: yes
+    remote_src: true
 
 - name: Install specified python requirements
   pip:
@@ -40,7 +41,7 @@
   ansible.builtin.file:
     path: /opt/bazarr/
     state: directory
-    recurse: yes
+    recurse: true
     owner: bazarr
     group: bazarr
 

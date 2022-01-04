@@ -268,7 +268,7 @@ variable "tdarr_ip" {
 
 variable "bazarr_ip" {
   type    = string
-  default = "192.168.1.20/24"
+  default = "192.168.1.31/24"
 }
 
 variable "beets_ip" {

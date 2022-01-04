@@ -19,7 +19,7 @@
 192.168.1.27 files.test
 192.168.1.29 prowlarr.test
 192.168.1.19 tdarr.test
-192.168.1.20 bazarr.test
+192.168.1.31 bazarr.test
 192.168.1.21 beets.test
 192.168.1.33 network.test
 192.168.1.23 work-docker.test
