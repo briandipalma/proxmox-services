@@ -228,7 +228,7 @@ variable "unifi_ip" {
 
 variable "jellyfin_ip" {
   type    = string
-  default = "192.168.1.10/24"
+  default = "192.168.1.21/24"
 }
 
 variable "sonarr_ip" {
@@ -238,15 +238,25 @@ variable "sonarr_ip" {
 
 variable "radarr_ip" {
   type    = string
-  default = "192.168.1.12/24"
+  default = "192.168.1.23/24"
+}
+
+variable "prowlarr_ip" {
+  type    = string
+  default = "192.168.1.24/24"
+}
+
+variable "nzbget_ip" {
+  type    = string
+  default = "192.168.1.25/24"
 }
 
 variable "qbittorrent_ip" {
   type    = string
-  default = "192.168.1.15/24"
+  default = "192.168.1.26/24"
 }
 
-variable "nzbget_ip" {
+variable "bazarr_ip" {
   type    = string
   default = "192.168.1.27/24"
 }
@@ -256,47 +266,37 @@ variable "samba_ip" {
   default = "192.168.1.28/24"
 }
 
-variable "prowlarr_ip" {
+variable "network_ip" {
   type    = string
   default = "192.168.1.29/24"
 }
 
-variable "tdarr_ip" {
+variable "beets_ip" {
   type    = string
-  default = "192.168.1.19/24"
+  default = "192.168.1.30/24"
 }
 
-variable "bazarr_ip" {
+variable "keycloak_ip" {
   type    = string
   default = "192.168.1.31/24"
 }
 
-variable "beets_ip" {
+variable "ipa_ip" {
   type    = string
-  default = "192.168.1.21/24"
+  default = "192.168.1.32/24"
 }
 
-variable "network_ip" {
+variable "tdarr_ip" {
   type    = string
   default = "192.168.1.33/24"
 }
 
 variable "work_docker_ip" {
   type    = string
-  default = "192.168.1.23/24"
-}
-
-variable "ipa_ip" {
-  type    = string
-  default = "192.168.1.24/24"
-}
-
-variable "keycloak_ip" {
-  type    = string
-  default = "192.168.1.25/24"
+  default = "192.168.1.34/24"
 }
 
 variable "dev_ip" {
   type    = string
-  default = "192.168.1.26/24"
+  default = "192.168.1.35/24"
 }

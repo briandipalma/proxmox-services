@@ -14,4 +14,4 @@ http:
     jellyfin:
       loadBalancer:
         servers:
-          - url: http://192.168.1.10:8096
+          - url: http://192.168.1.21:8096
