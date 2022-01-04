@@ -14,9 +14,9 @@
 192.168.1.22 sonarr.test
 192.168.1.12 radarr.test
 192.168.1.15 qbittorrent.test
-192.168.1.16 nzbget.test
-192.168.1.27 samba.test
-192.168.1.27 files.test
+192.168.1.27 nzbget.test
+192.168.1.28 samba.test
+192.168.1.28 files.test
 192.168.1.29 prowlarr.test
 192.168.1.19 tdarr.test
 192.168.1.31 bazarr.test

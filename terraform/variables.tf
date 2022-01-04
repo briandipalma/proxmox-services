@@ -248,12 +248,12 @@ variable "qbittorrent_ip" {
 
 variable "nzbget_ip" {
   type    = string
-  default = "192.168.1.16/24"
+  default = "192.168.1.27/24"
 }
 
 variable "samba_ip" {
   type    = string
-  default = "192.168.1.27/24"
+  default = "192.168.1.28/24"
 }
 
 variable "prowlarr_ip" {

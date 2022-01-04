@@ -1,3 +1,4 @@
+---
 http:
   routers:
     to-nzbget:
@@ -8,4 +9,4 @@ http:
     nzbget:
       loadBalancer:
         servers:
-          - url: http://192.168.1.16:6789
+          - url: http://192.168.1.27:6789
