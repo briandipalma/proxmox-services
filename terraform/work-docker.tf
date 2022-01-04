@@ -1,13 +1,13 @@
 resource "proxmox_lxc" "work-docker" {
-  target_node  = "pve"
-  hostname     = "work-docker"
-  ostemplate   = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
-  unprivileged = true
-  ostype = "ubuntu"
+  target_node     = "pve"
+  hostname        = "work-docker"
+  ostemplate      = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
+  unprivileged    = true
+  ostype          = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
-  start = true
-  onboot = true
-  vmid = var.work_docker_lxcid
+  start           = true
+  onboot          = true
+  vmid            = var.work_docker_lxcid
 
   features {
     nesting = true

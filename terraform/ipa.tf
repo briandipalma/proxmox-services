@@ -1,14 +1,14 @@
 resource "proxmox_lxc" "ipa" {
-  target_node  = "pve"
-  hostname     = "ipa"
-  ostemplate   = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
-  unprivileged = true
-  ostype = "ubuntu"
+  target_node     = "pve"
+  hostname        = "ipa"
+  ostemplate      = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
+  unprivileged    = true
+  ostype          = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
-  start = true
-  onboot = true
-  vmid = var.ipa_lxcid
-  memory = 1024
+  start           = true
+  onboot          = true
+  vmid            = var.ipa_lxcid
+  memory          = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {

@@ -1,14 +1,14 @@
 resource "proxmox_lxc" "radarr" {
-  target_node  = "pve"
-  hostname     = "radarr"
-  ostemplate   = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
-  unprivileged = true
-  ostype = "ubuntu"
+  target_node     = "pve"
+  hostname        = "radarr"
+  ostemplate      = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
+  unprivileged    = true
+  ostype          = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
-  start = true
-  onboot = true
-  vmid = var.radarr_lxcid
-  memory = 1024
+  start           = true
+  onboot          = true
+  vmid            = var.radarr_lxcid
+  memory          = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {
@@ -42,7 +42,7 @@ resource "proxmox_lxc" "radarr" {
     ip6    = "auto"
     hwaddr = var.radarr_mac
   }
-  
+
   lifecycle {
     ignore_changes = [
       mountpoint[0].storage,

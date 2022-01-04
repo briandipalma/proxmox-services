@@ -1,14 +1,14 @@
 resource "proxmox_lxc" "jellyfin" {
-  target_node  = "pve"
-  hostname     = "jellyfin"
-  ostemplate   = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
-  unprivileged = true
-  ostype = "ubuntu"
+  target_node     = "pve"
+  hostname        = "jellyfin"
+  ostemplate      = "local:vztmpl/ubuntu-20.10-standard_20.10-1_amd64.tar.gz"
+  unprivileged    = true
+  ostype          = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
-  start = true
-  onboot = true
-  vmid = var.jellyfin_lxcid
-  memory = 8192
+  start           = true
+  onboot          = true
+  vmid            = var.jellyfin_lxcid
+  memory          = 8192
 
   // Terraform will crash without rootfs defined
   rootfs {
@@ -33,7 +33,7 @@ resource "proxmox_lxc" "jellyfin" {
     storage = "/mnt/storage/appdata/jellyfin/data"
     volume  = "/mnt/storage/appdata/jellyfin/data"
   }
-  
+
   mountpoint {
     mp      = "/var/cache/jellyfin"
     size    = "8G"
@@ -42,7 +42,7 @@ resource "proxmox_lxc" "jellyfin" {
     storage = "/mnt/storage/appdata/jellyfin/cache"
     volume  = "/mnt/storage/appdata/jellyfin/cache"
   }
-  
+
   mountpoint {
     mp      = "/mnt/media"
     size    = "8G"
@@ -51,7 +51,7 @@ resource "proxmox_lxc" "jellyfin" {
     storage = "/mnt/storage/media"
     volume  = "/mnt/storage/media"
   }
-  
+
   network {
     name   = "eth0"
     bridge = "vmbr0"
@@ -60,7 +60,7 @@ resource "proxmox_lxc" "jellyfin" {
     ip6    = "auto"
     hwaddr = var.jellyfin_mac
   }
-  
+
   lifecycle {
     ignore_changes = [
       mountpoint[0].storage,

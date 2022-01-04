@@ -1,14 +1,14 @@
 resource "proxmox_lxc" "tdarr" {
-  target_node  = "pve"
-  hostname     = "tdarr"
-  ostemplate   = "local:vztmpl/ubuntu-18.04-standard_18.04.1-1_amd64.tar.gz"
-  unprivileged = true
-  ostype = "ubuntu"
+  target_node     = "pve"
+  hostname        = "tdarr"
+  ostemplate      = "local:vztmpl/ubuntu-18.04-standard_18.04.1-1_amd64.tar.gz"
+  unprivileged    = true
+  ostype          = "ubuntu"
   ssh_public_keys = file(var.pub_ssh_key)
-  start = true
-  onboot = true
-  vmid = var.tdarr_lxcid
-  memory = 1024
+  start           = true
+  onboot          = true
+  vmid            = var.tdarr_lxcid
+  memory          = 1024
 
   // Terraform will crash without rootfs defined
   rootfs {
