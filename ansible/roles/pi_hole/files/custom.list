@@ -9,7 +9,7 @@
 192.168.1.4 torrents.test
 192.168.1.4 traefik.test
 192.168.1.6 unifi.test
-192.168.1.5 pve.test
+192.168.1.20 pve.test
 192.168.1.21 jellyfin.test
 192.168.1.22 sonarr.test
 192.168.1.23 radarr.test
