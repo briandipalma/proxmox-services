@@ -1,3 +1,4 @@
+---
 - name: Create Sonarr group
   group:
     name: sonarr
@@ -8,9 +9,9 @@
     name: sonarr
     groups: sonarr
     shell: /sbin/nologin
-    append: yes
+    append: true
     state: present
-    create_home: no
+    create_home: false
 
 - name: Install packages
   apt:
@@ -18,7 +19,7 @@
       - ca-certificates
       - gnupg
     state: latest
-    
+
 - name: Add Mono project apt key
   ansible.builtin.apt_key:
     keyserver: keyserver.ubuntu.com
@@ -44,7 +45,7 @@
 - name: Update repo cache
   changed_when: false
   apt:
-    update_cache: yes
+    update_cache: true
 
 - name: Install Sonarr
   apt:

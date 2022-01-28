@@ -18,6 +18,7 @@ network.test
 work-docker.test
 ipa.test
 keycloak.test
+syncthing.test
 
 [pi_hole]
 192.168.1.2
@@ -73,3 +74,6 @@ ipa.test
 
 [keycloak]
 keycloak.test
+
+[syncthing]
+syncthing.test

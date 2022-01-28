@@ -1,3 +1,4 @@
+---
 - name: Install required packages
   apt:
     pkg:
@@ -19,9 +20,9 @@
     name: brian
     groups: sambashare
     shell: /sbin/nologin
-    append: yes
+    append: true
     state: present
-    create_home: no
+    create_home: false
   register: brian_created
 
 - name: Create charlene user

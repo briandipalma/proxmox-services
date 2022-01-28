@@ -121,6 +121,11 @@ variable "dev_lxcid" {
   default = 519
 }
 
+variable "syncthing_lxcid" {
+  type    = number
+  default = 520
+}
+
 variable "traefik_mac" {
   type    = string
   default = "B6:1A:E1:C6:86:03"
@@ -299,4 +304,9 @@ variable "work_docker_ip" {
 variable "dev_ip" {
   type    = string
   default = "192.168.1.35/24"
+}
+
+variable "syncthing_ip" {
+  type    = string
+  default = "192.168.1.36/24"
 }

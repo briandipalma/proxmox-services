@@ -1,0 +1,6 @@
+---
+- name: Restart Syncthing
+  systemd:
+    name: syncthing@syncthing
+    state: restarted
+    enabled: true

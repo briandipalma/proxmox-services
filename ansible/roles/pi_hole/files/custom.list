@@ -8,6 +8,7 @@
 192.168.1.4 nzbs.test
 192.168.1.4 torrents.test
 192.168.1.4 traefik.test
+192.168.1.4 sync.test
 192.168.1.6 unifi.test
 192.168.1.20 pve.test
 192.168.1.21 jellyfin.test
@@ -25,3 +26,4 @@
 192.168.1.32 ipa.test
 192.168.1.33 tdarr.test
 192.168.1.34 work-docker.test
+192.168.1.36 syncthing.test

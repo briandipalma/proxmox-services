@@ -45,6 +45,7 @@
     state: directory
     recurse: true
     owner: "101000"
+    group: "100118"
 
 - name: Recursively change ownership of charlene share directory
   ansible.builtin.file:
@@ -52,6 +53,7 @@
     state: directory
     recurse: true
     owner: "101001"
+    group: "100118"
 
 - name: Recursively change ownership of Tdarr config directory
   ansible.builtin.file:
@@ -80,6 +82,14 @@
 - name: Recursively change ownership of Traefik config directory
   ansible.builtin.file:
     path: /mnt/storage/appdata/traefik/config
+    state: directory
+    recurse: true
+    owner: "101000"
+    group: "101000"
+
+- name: Recursively change ownership of Syncthing config directory
+  ansible.builtin.file:
+    path: /mnt/storage/appdata/syncthing
     state: directory
     recurse: true
     owner: "101000"

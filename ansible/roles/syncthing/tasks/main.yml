@@ -1,0 +1,49 @@
+---
+- name: Create Syncthing group
+  group:
+    name: syncthing
+    state: present
+    gid: 118
+
+- name: Create Syncthing user
+  user:
+    name: syncthing
+    groups: syncthing
+    shell: /sbin/nologin
+    append: true
+    state: present
+    create_home: false
+
+- name: Install required packages
+  apt:
+    pkg:
+      - gnupg
+    state: latest
+
+- name: Add the Syncthing APT release key
+  ansible.builtin.apt_key:
+    url: https://syncthing.net/release-key.gpg
+    keyring: /etc/apt/trusted.gpg.d/syncthing-archive-keyring.gpg
+
+- name: Add the Syncthing repository
+  apt_repository:
+    repo: deb https://apt.syncthing.net/ syncthing stable
+    filename: syncthing
+    state: present
+
+- name: Copy systemd service file to server
+  copy:
+    src: syncthing@syncthing.service.d
+    dest: /etc/systemd/system
+    owner: root
+    group: root
+  notify:
+    - Restart Syncthing
+
+- name: Install syncthing package
+  apt:
+    pkg:
+      - syncthing
+    state: latest
+  notify:
+    - Restart Syncthing
