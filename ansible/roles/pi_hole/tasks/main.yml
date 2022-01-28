@@ -1,3 +1,4 @@
+---
 - name: Download Pi-hole installer
   when: ansible_hostname == "pi-hole-primary"
   get_url:
@@ -11,7 +12,7 @@
     src: setupVars.conf
     dest: /etc/pihole/
   register: setup_conf_copied
-    
+
 - name: Copy Pi-hole DHCP config
   when: ansible_hostname == "raspberrypi"
   copy:
