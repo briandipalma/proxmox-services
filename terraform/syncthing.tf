@@ -54,7 +54,8 @@ resource "proxmox_lxc" "syncthing" {
   lifecycle {
     ignore_changes = [
       mountpoint[0].storage,
-      mountpoint[1].storage
+      mountpoint[1].storage,
+      mountpoint[2].storage
     ]
   }
 }
