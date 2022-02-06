@@ -186,11 +186,6 @@ variable "bazarr_mac" {
   default = "B2:BE:AF:7B:2F:9F"
 }
 
-variable "beets_mac" {
-  type    = string
-  default = "7A:61:4E:F6:ED:3A"
-}
-
 variable "network_mac" {
   type    = string
   default = "42:98:73:F5:A2:A8"

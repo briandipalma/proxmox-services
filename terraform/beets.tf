@@ -4,7 +4,10 @@ resource "proxmox_lxc" "beets" {
   ostemplate      = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
   unprivileged    = true
   ostype          = "ubuntu"
-  ssh_public_keys = file(var.pub_ssh_key)
+  ssh_public_keys = <<-EOT
+   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA6iDv3SIqB+4ycb9iuDNbxZ5Koz87LKTZG/QXuwBZgN brian@pop-os-2021-03-20
+	  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM4ziGzxYeuB2dNSxurjyxvQTGxZwvoiTs/0pxmnPcDz brian@oneplus3t-2022-02-06
+  EOT
   start           = true
   onboot          = true
   vmid            = var.beets_lxcid
@@ -39,7 +42,6 @@ resource "proxmox_lxc" "beets" {
     gw     = var.gateway_ip
     ip     = var.beets_ip
     ip6    = "auto"
-    hwaddr = var.beets_mac
   }
 
   lifecycle {

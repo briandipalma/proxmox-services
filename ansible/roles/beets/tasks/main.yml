@@ -1,3 +1,4 @@
+---
 - name: Install packages
   apt:
     pkg:
@@ -28,7 +29,7 @@
   unarchive:
     src: https://github.com/acoustid/chromaprint/releases/download/v1.5.0/chromaprint-fpcalc-1.5.0-linux-x86_64.tar.gz
     dest: /usr/local/bin
-    remote_src: yes
+    remote_src: true
     extra_opts:
       # We want to strip the directory and only take the executable
       - --strip-components=2
