@@ -181,11 +181,6 @@ variable "tdarr_mac" {
   default = "2A:F0:E4:07:39:3B"
 }
 
-variable "bazarr_mac" {
-  type    = string
-  default = "B2:BE:AF:7B:2F:9F"
-}
-
 variable "network_mac" {
   type    = string
   default = "42:98:73:F5:A2:A8"
