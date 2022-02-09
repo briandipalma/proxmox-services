@@ -43,6 +43,15 @@ resource "proxmox_lxc" "syncthing" {
     volume  = "/mnt/storage/shares/charlene"
   }
 
+  mountpoint {
+    mp      = "/mnt/storage/media/music"
+    size    = "8G"
+    slot    = 3
+    key     = "3"
+    storage = "/mnt/storage/media/music"
+    volume  = "/mnt/storage/media/music"
+  }
+
   network {
     name   = "eth0"
     bridge = "vmbr0"
@@ -55,7 +64,8 @@ resource "proxmox_lxc" "syncthing" {
     ignore_changes = [
       mountpoint[0].storage,
       mountpoint[1].storage,
-      mountpoint[2].storage
+      mountpoint[2].storage,
+      mountpoint[3].storage
     ]
   }
 }
