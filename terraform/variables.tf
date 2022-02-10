@@ -126,6 +126,16 @@ variable "syncthing_lxcid" {
   default = 520
 }
 
+variable "lidarr_lxcid" {
+  type    = number
+  default = 521
+}
+
+variable "headphones_lxcid" {
+  type    = number
+  default = 522
+}
+
 variable "traefik_mac" {
   type    = string
   default = "B6:1A:E1:C6:86:03"
@@ -299,4 +309,14 @@ variable "dev_ip" {
 variable "syncthing_ip" {
   type    = string
   default = "192.168.1.36/24"
+}
+
+variable "lidarr_ip" {
+  type    = string
+  default = "192.168.1.37/24"
+}
+
+variable "headphones_ip" {
+  type    = string
+  default = "192.168.1.38/24"
 }
