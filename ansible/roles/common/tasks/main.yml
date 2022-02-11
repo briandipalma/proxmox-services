@@ -1,5 +1,24 @@
+---
 - name: Upgrade dependencies
   apt:
-    update_cache: yes
+    update_cache: true
     upgrade: full
   tags: always
+
+- name: Install kitty-terminfo
+  apt:
+    pkg:
+      - kitty-terminfo
+    state: latest
+
+- name: Set XPS13 authorized key
+  ansible.posix.authorized_key:
+    user: root
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA6iDv3SIqB+4ycb9iuDNbxZ5Koz87LKTZG/QXuwBZgN brian@pop-os-2021-03-20"
+    state: present
+
+- name: Set OnePlus3T authorized key
+  ansible.posix.authorized_key:
+    user: root
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM4ziGzxYeuB2dNSxurjyxvQTGxZwvoiTs/0pxmnPcDz brian@oneplus3t-2022-02-06"
+    state: present
