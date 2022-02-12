@@ -1,0 +1,5 @@
+---
+- hosts: lidarr
+  roles:
+    - { role: common, tags: all }
+    - { role: lidarr, tags: lidarr }

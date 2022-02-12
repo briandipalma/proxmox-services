@@ -1,3 +1,4 @@
+---
 - name: Create Radarr group
   group:
     name: radarr
@@ -8,9 +9,9 @@
     name: radarr
     groups: radarr
     shell: /sbin/nologin
-    append: yes
+    append: true
     state: present
-    create_home: no
+    create_home: false
 
 - name: Install packages
   apt:
@@ -24,13 +25,13 @@
   unarchive:
     src: https://github.com/Radarr/Radarr/releases/download/v3.2.2.5080/Radarr.master.3.2.2.5080.linux-core-x64.tar.gz
     dest: /opt/
-    remote_src: yes
+    remote_src: true
 
 - name: Recursively change ownership of Radarr directory
   ansible.builtin.file:
     path: /opt/Radarr
     state: directory
-    recurse: yes
+    recurse: true
     owner: radarr
     group: radarr
 

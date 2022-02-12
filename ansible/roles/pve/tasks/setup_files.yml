@@ -1,8 +1,9 @@
+---
 - name: Recursively change ownership of {{ item }} directory
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
-    recurse: yes
+    recurse: true
     owner: "101000"
     group: "101000"
 

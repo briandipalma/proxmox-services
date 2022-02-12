@@ -29,12 +29,12 @@ resource "proxmox_lxc" "lidarr" {
   }
 
   mountpoint {
-    mp      = "/mnt/storage/media"
+    mp      = "/mnt/storage"
     size    = "8G"
     slot    = 1
     key     = "1"
-    storage = "/mnt/storage/media"
-    volume  = "/mnt/storage/media"
+    storage = "/mnt/storage"
+    volume  = "/mnt/storage"
   }
 
   network {

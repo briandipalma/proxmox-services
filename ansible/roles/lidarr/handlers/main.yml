@@ -1,6 +1,6 @@
 ---
-- name: Start Radarr
+- name: Start Lidarr
   systemd:
-    name: radarr
+    name: lidarr
     state: started
     enabled: true

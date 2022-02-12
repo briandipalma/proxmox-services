@@ -95,3 +95,11 @@
     recurse: true
     owner: "101000"
     group: "101000"
+
+- name: Recursively change ownership of Lidarr config directory
+  ansible.builtin.file:
+    path: /mnt/storage/appdata/lidarr
+    state: directory
+    recurse: true
+    owner: "101000"
+    group: "101000"
