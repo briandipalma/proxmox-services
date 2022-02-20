@@ -10,7 +10,6 @@ prowlarr.test
 nzbget.test
 qbittorrent.test
 samba.test
-pve.test
 tdarr.test
 bazarr.test
 beets.test
@@ -51,9 +50,6 @@ qbittorrent.test
 
 [samba]
 samba.test
-
-[pve]
-pve.test
 
 [tdarr]
 tdarr.test

@@ -9,7 +9,6 @@
 - import_playbook: ./playbooks/nzbget.yml
 - import_playbook: ./playbooks/pi-hole.yml
 - import_playbook: ./playbooks/prowlarr.yml
-- import_playbook: ./playbooks/pve.yml
 - import_playbook: ./playbooks/qbittorrent.yml
 - import_playbook: ./playbooks/radarr.yml
 - import_playbook: ./playbooks/samba.yml

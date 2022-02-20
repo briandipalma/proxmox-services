@@ -1,5 +1,0 @@
----
-- hosts: pve
-  roles:
-    - { role: common, tags: all }
-    - { role: pve, tags: pve }
