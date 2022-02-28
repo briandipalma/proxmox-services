@@ -136,6 +136,11 @@ variable "headphones_lxcid" {
   default = 522
 }
 
+variable "wireguard_lxcid" {
+  type    = number
+  default = 523
+}
+
 variable "traefik_mac" {
   type    = string
   default = "B6:1A:E1:C6:86:03"
@@ -319,4 +324,9 @@ variable "lidarr_ip" {
 variable "headphones_ip" {
   type    = string
   default = "192.168.1.38/24"
+}
+
+variable "wireguard_ip" {
+  type    = string
+  default = "192.168.1.39/24"
 }
