@@ -1,6 +1,5 @@
 ---
 - hosts: pi_hole
-  become: "{{ become_root }}"
   roles:
-    - { role: common, tags: all }
-    - { role: pi_hole, tags: pi_hole }
+    - common
+    - pi_hole
