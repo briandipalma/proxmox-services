@@ -1,0 +1,26 @@
+---
+- name: Install packages
+  apt:
+    pkg:
+      - wireguard
+    state: latest
+
+- name: Enable IP forwarding
+  ansible.builtin.lineinfile:
+    path: /etc/sysctl.conf
+    regexp: "^#net.ipv4.ip_forward=1"
+    line: net.ipv4.ip_forward=1
+  register: ip_forwarding_enabled
+
+- name: Reload sysctl file
+  when: ip_forwarding_enabled.changed
+  ansible.builtin.command:
+    argv:
+      - sysctl
+      - -p
+
+- name: Enable wg-quick service
+  systemd:
+    name: wg-quick@wg0.service
+    state: restarted
+    enabled: true

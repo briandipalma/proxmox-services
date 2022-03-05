@@ -20,7 +20,7 @@ resource "proxmox_lxc" "wireguard" {
   }
 
   mountpoint {
-    mp      = "/var/lib/wireguard"
+    mp      = "/etc/wireguard"
     size    = "8G"
     slot    = 0
     key     = "0"

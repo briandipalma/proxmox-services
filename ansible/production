@@ -19,6 +19,7 @@ ipa.test
 keycloak.test
 syncthing.test
 lidarr.test
+wireguard.test
 
 [pi_hole]
 192.168.1.2
@@ -77,3 +78,6 @@ syncthing.test
 
 [lidarr]
 lidarr.test
+
+[wireguard]
+wireguard.test
