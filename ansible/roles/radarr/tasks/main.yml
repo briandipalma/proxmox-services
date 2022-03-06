@@ -23,9 +23,11 @@
 
 - name: Install Radarr
   unarchive:
-    src: https://github.com/Radarr/Radarr/releases/download/v3.2.2.5080/Radarr.master.3.2.2.5080.linux-core-x64.tar.gz
+    src: https://github.com/Radarr/Radarr/releases/download/v4.0.5.5981/Radarr.master.4.0.5.5981.linux-core-x64.tar.gz
     dest: /opt/
     remote_src: true
+  notify:
+    - Start Radarr
 
 - name: Recursively change ownership of Radarr directory
   ansible.builtin.file:
