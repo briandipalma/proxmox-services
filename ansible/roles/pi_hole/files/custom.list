@@ -21,7 +21,6 @@
 192.168.1.28 samba.test
 192.168.1.28 files.test
 192.168.1.29 network.test
-192.168.1.30 beets.test
 192.168.1.31 keycloak.test
 192.168.1.32 ipa.test
 192.168.1.33 tdarr.test

@@ -1,6 +1,5 @@
 ---
 - import_playbook: ./playbooks/bazarr.yml
-- import_playbook: ./playbooks/beets.yml
 - import_playbook: ./playbooks/ipa.yml
 - import_playbook: ./playbooks/jellyfin.yml
 - import_playbook: ./playbooks/keycloak.yml

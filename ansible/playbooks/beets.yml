@@ -1,5 +1,0 @@
----
-- hosts: beets
-  roles:
-    - { role: common, tags: all }
-    - { role: beets, tags: beets }

@@ -91,11 +91,6 @@ variable "bazarr_lxcid" {
   default = 513
 }
 
-variable "beets_lxcid" {
-  type    = number
-  default = 514
-}
-
 variable "network_lxcid" {
   type    = number
   default = 515
@@ -279,11 +274,6 @@ variable "samba_ip" {
 variable "network_ip" {
   type    = string
   default = "192.168.1.29/24"
-}
-
-variable "beets_ip" {
-  type    = string
-  default = "192.168.1.30/24"
 }
 
 variable "keycloak_ip" {

@@ -12,7 +12,6 @@ qbittorrent.test
 samba.test
 tdarr.test
 bazarr.test
-beets.test
 network.test
 work-docker.test
 ipa.test
@@ -57,9 +56,6 @@ tdarr.test
 
 [bazarr]
 bazarr.test
-
-[beets]
-beets.test
 
 [network]
 network.test
