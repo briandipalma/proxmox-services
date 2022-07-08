@@ -14,7 +14,7 @@
     keyring: /etc/apt/trusted.gpg.d/unifi-repo.gpg
 
 - name: Add the Ubiquiti repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb https://www.ui.com/downloads/unifi/debian stable ubiquiti
     filename: 100-ubnt-unifi
     state: present
@@ -25,7 +25,7 @@
     state: present
 
 - name: Add the MongoDB repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse
     filename: mongodb-org-3.4
     state: present
