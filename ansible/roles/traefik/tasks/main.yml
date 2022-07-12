@@ -1,19 +1,19 @@
 ---
 - name: Install Traefik
-  unarchive:
-    src: https://github.com/traefik/traefik/releases/download/v2.8.0/traefik_v2.8.0_linux_amd64.tar.gz
+  ansible.builtin.unarchive:
+    src: https://github.com/traefik/traefik/releases/download/v2.8.1/traefik_v2.8.1_linux_amd64.tar.gz
     dest: /usr/local/bin
     remote_src: true
   notify:
     - Restart Traefik
 
 - name: Create Traefik group
-  group:
+  ansible.builtin.group:
     name: traefik
     state: present
 
 - name: Create Traefik user
-  user:
+  ansible.builtin.user:
     name: traefik
     group: traefik
     shell: /sbin/nologin
@@ -27,17 +27,19 @@
     state: present
 
 - name: Copy Traefik config
-  copy:
+  ansible.builtin.copy:
     src: traefik
     dest: /etc
+    mode: 0755
   notify:
     - Restart Traefik
 
 - name: Copy systemd service file to server
-  copy:
+  ansible.builtin.copy:
     src: traefik.service
     dest: /etc/systemd/system
     owner: root
     group: root
+    mode: 0644
   notify:
     - Start Traefik
