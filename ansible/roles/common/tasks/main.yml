@@ -1,12 +1,12 @@
 ---
 - name: Upgrade dependencies
-  apt:
+  ansible.builtin.apt:
     update_cache: true
     upgrade: full
   tags: always
 
 - name: Install kitty-terminfo
-  apt:
+  ansible.builtin.apt:
     pkg:
       - kitty-terminfo
     state: latest
@@ -21,4 +21,10 @@
   ansible.posix.authorized_key:
     user: root
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM4ziGzxYeuB2dNSxurjyxvQTGxZwvoiTs/0pxmnPcDz brian@oneplus3t-2022-02-06"
+    state: present
+
+- name: Set Samsung_S20_FE authorized key
+  ansible.posix.authorized_key:
+    user: root
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK0hWDvdigGG+CV1P73mdjz6b7fXBGmfhg962pDEgT/9 brian@samsung_s20_fe-2022-08-19"
     state: present
