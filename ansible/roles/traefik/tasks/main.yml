@@ -1,4 +1,7 @@
 ---
+- name: Include my vars
+  ansible.builtin.include_vars: /home/brian/dev/my-data/ansible_vars.yml
+
 - name: Install Traefik
   ansible.builtin.unarchive:
     src: https://github.com/traefik/traefik/releases/download/v2.8.4/traefik_v2.8.4_linux_amd64.tar.gz
@@ -31,6 +34,14 @@
     src: traefik
     dest: /etc
     mode: 0755
+  notify:
+    - Restart Traefik
+
+- name: Create Traefik config file
+  ansible.builtin.template:
+    src: traefik.yml.j2
+    dest: /etc/traefik/traefik.yml
+    mode: 0644
   notify:
     - Restart Traefik
 

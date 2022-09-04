@@ -18,7 +18,7 @@ api:
 certificatesResolvers:
   letsencrypt:
     acme:
-      email: ""
+      email: "{{ acme_email }}"
       storage: /traefik-config/acme.json
       httpChallenge:
         entryPoint: web
