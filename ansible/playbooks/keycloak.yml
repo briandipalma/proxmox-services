@@ -1,5 +1,0 @@
----
-- hosts: keycloak
-  roles:
-    - { role: common, tags: all }
-    - { role: keycloak, tags: keycloak }

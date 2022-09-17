@@ -1,8 +1,0 @@
-[Unit]
-Description=Keycloak service
-
-[Service]
-User=keycloak
-Group=keycloak
-# The -b option is because JBoss Wildfly only binds to localhost by default
-ExecStart=/opt/keycloak/bin/standalone.sh -b 192.168.1.25

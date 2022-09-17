@@ -1,5 +1,0 @@
----
-- hosts: ipa
-  roles:
-    - { role: common, tags: all }
-    - { role: ipa, tags: ipa }

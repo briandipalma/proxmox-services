@@ -1,8 +1,6 @@
 ---
 - import_playbook: ./playbooks/bazarr.yml
-- import_playbook: ./playbooks/ipa.yml
 - import_playbook: ./playbooks/jellyfin.yml
-- import_playbook: ./playbooks/keycloak.yml
 - import_playbook: ./playbooks/lidarr.yml
 - import_playbook: ./playbooks/network.yml
 - import_playbook: ./playbooks/nzbget.yml

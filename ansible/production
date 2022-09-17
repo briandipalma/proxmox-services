@@ -13,9 +13,6 @@ samba.test
 tdarr.test
 bazarr.test
 network.test
-work-docker.test
-ipa.test
-keycloak.test
 syncthing.test
 lidarr.test
 wireguard.test
@@ -59,15 +56,6 @@ bazarr.test
 
 [network]
 network.test
-
-[work_docker]
-work-docker.test
-
-[ipa]
-ipa.test
-
-[keycloak]
-keycloak.test
 
 [syncthing]
 syncthing.test

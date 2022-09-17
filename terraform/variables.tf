@@ -101,19 +101,9 @@ variable "work_docker_lxcid" {
   default = 516
 }
 
-variable "ipa_lxcid" {
-  type    = number
-  default = 517
-}
-
 variable "keycloak_lxcid" {
   type    = number
   default = 518
-}
-
-variable "dev_lxcid" {
-  type    = number
-  default = 519
 }
 
 variable "syncthing_lxcid" {
@@ -124,11 +114,6 @@ variable "syncthing_lxcid" {
 variable "lidarr_lxcid" {
   type    = number
   default = 521
-}
-
-variable "headphones_lxcid" {
-  type    = number
-  default = 522
 }
 
 variable "wireguard_lxcid" {
@@ -201,21 +186,6 @@ variable "work_docker_mac" {
   default = "F6:82:27:AF:F1:47"
 }
 
-variable "ipa_mac" {
-  type    = string
-  default = "76:96:E0:16:62:4F"
-}
-
-variable "keycloak_mac" {
-  type    = string
-  default = "2A:53:05:0D:28:29"
-}
-
-variable "dev_mac" {
-  type    = string
-  default = "9A:AD:16:AF:35:26"
-}
-
 variable "pi-hole-primary_ip" {
   type    = string
   default = "192.168.1.2/24"
@@ -276,16 +246,6 @@ variable "network_ip" {
   default = "192.168.1.29/24"
 }
 
-variable "keycloak_ip" {
-  type    = string
-  default = "192.168.1.31/24"
-}
-
-variable "ipa_ip" {
-  type    = string
-  default = "192.168.1.32/24"
-}
-
 variable "tdarr_ip" {
   type    = string
   default = "192.168.1.33/24"
@@ -296,11 +256,6 @@ variable "work_docker_ip" {
   default = "192.168.1.34/24"
 }
 
-variable "dev_ip" {
-  type    = string
-  default = "192.168.1.35/24"
-}
-
 variable "syncthing_ip" {
   type    = string
   default = "192.168.1.36/24"
@@ -309,11 +264,6 @@ variable "syncthing_ip" {
 variable "lidarr_ip" {
   type    = string
   default = "192.168.1.37/24"
-}
-
-variable "headphones_ip" {
-  type    = string
-  default = "192.168.1.38/24"
 }
 
 variable "wireguard_ip" {
