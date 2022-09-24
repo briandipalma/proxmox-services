@@ -121,6 +121,11 @@ variable "wireguard_lxcid" {
   default = 523
 }
 
+variable "rclone_lxcid" {
+  type    = number
+  default = 524
+}
+
 variable "traefik_mac" {
   type    = string
   default = "B6:1A:E1:C6:86:03"
@@ -269,4 +274,9 @@ variable "lidarr_ip" {
 variable "wireguard_ip" {
   type    = string
   default = "192.168.1.39/24"
+}
+
+variable "rclone_ip" {
+  type    = string
+  default = "192.168.1.40/24"
 }

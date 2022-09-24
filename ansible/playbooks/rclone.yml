@@ -1,0 +1,5 @@
+---
+- hosts: rclone
+  roles:
+    - common
+    - rclone
