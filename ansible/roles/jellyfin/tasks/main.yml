@@ -1,13 +1,13 @@
 ---
 - name: Install packages
-  apt:
+  ansible.builtin.apt:
     pkg:
       - apt-transport-https
       - gnupg
     state: latest
 
 - name: Add the Universe repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "{{ item }}"
     state: present
   loop:
@@ -22,18 +22,18 @@
     keyring: /etc/apt/trusted.gpg.d/jellyfin.gpg
 
 - name: Add the Jellyfin repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb [arch=amd64] https://repo.jellyfin.org/ubuntu focal main
     filename: jellyfin
     state: present
 
 - name: Update repo cache
   changed_when: false
-  apt:
+  ansible.builtin.apt:
     update_cache: true
 
 - name: Install Jellyfin package
-  apt:
+  ansible.builtin.apt:
     pkg:
       - jellyfin
     state: latest
