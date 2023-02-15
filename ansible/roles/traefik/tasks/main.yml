@@ -4,7 +4,7 @@
 
 - name: Install Traefik
   ansible.builtin.unarchive:
-    src: https://github.com/traefik/traefik/releases/download/v2.9.7/traefik_v2.9.7_linux_amd64.tar.gz
+    src: https://github.com/traefik/traefik/releases/download/v2.9.8/traefik_v2.9.8_linux_amd64.tar.gz
     dest: /usr/local/bin
     remote_src: true
   notify:
@@ -33,7 +33,7 @@
   ansible.builtin.copy:
     src: traefik
     dest: /etc
-    mode: 0755
+    mode: "0755"
   notify:
     - Restart Traefik
 
@@ -41,7 +41,7 @@
   ansible.builtin.template:
     src: traefik.yml.j2
     dest: /etc/traefik/traefik.yml
-    mode: 0644
+    mode: "0644"
   notify:
     - Restart Traefik
 
@@ -51,6 +51,6 @@
     dest: /etc/systemd/system
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify:
     - Start Traefik
