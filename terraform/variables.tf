@@ -161,11 +161,6 @@ variable "samba_mac" {
   default = "CE:04:BF:59:F1:7F"
 }
 
-variable "pi-hole-primary_mac" {
-  type    = string
-  default = "BA:B8:76:70:58:90"
-}
-
 variable "unifi_mac" {
   type    = string
   default = "02:58:BD:D4:C1:FC"
