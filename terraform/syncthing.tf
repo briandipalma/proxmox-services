@@ -64,6 +64,15 @@ resource "proxmox_lxc" "syncthing" {
     volume  = "/mnt/storage/media/pictures"
   }
 
+  mountpoint {
+    mp      = "/mnt/storage/media/videos"
+    size    = "8G"
+    slot    = 5
+    key     = "5"
+    storage = "/mnt/storage/media/videos"
+    volume  = "/mnt/storage/media/videos"
+  }
+
   network {
     name   = "eth0"
     bridge = "vmbr0"
@@ -78,7 +87,8 @@ resource "proxmox_lxc" "syncthing" {
       mountpoint[1].storage,
       mountpoint[2].storage,
       mountpoint[3].storage,
-      mountpoint[4].storage
+      mountpoint[4].storage,
+      mountpoint[5].storage
     ]
   }
 }
