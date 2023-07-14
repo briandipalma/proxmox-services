@@ -12,6 +12,5 @@
 - import_playbook: ./playbooks/samba.yml
 - import_playbook: ./playbooks/sonarr.yml
 - import_playbook: ./playbooks/syncthing.yml
-- import_playbook: ./playbooks/tdarr.yml
 - import_playbook: ./playbooks/traefik.yml
 - import_playbook: ./playbooks/unifi.yml

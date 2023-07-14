@@ -81,11 +81,6 @@ variable "prowlarr_lxcid" {
   default = 511
 }
 
-variable "tdarr_lxcid" {
-  type    = number
-  default = 512
-}
-
 variable "bazarr_lxcid" {
   type    = number
   default = 513
@@ -171,11 +166,6 @@ variable "prowlarr_mac" {
   default = "06:90:EE:CD:05:87"
 }
 
-variable "tdarr_mac" {
-  type    = string
-  default = "2A:F0:E4:07:39:3B"
-}
-
 variable "network_mac" {
   type    = string
   default = "42:98:73:F5:A2:A8"
@@ -244,11 +234,6 @@ variable "samba_ip" {
 variable "network_ip" {
   type    = string
   default = "192.168.1.29/24"
-}
-
-variable "tdarr_ip" {
-  type    = string
-  default = "192.168.1.33/24"
 }
 
 variable "work_docker_ip" {

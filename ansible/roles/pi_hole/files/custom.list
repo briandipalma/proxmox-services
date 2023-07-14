@@ -21,7 +21,6 @@
 192.168.1.28 samba.test
 192.168.1.28 files.test
 192.168.1.29 network.test
-192.168.1.33 tdarr.test
 192.168.1.36 syncthing.test
 192.168.1.37 lidarr.test
 192.168.1.39 wireguard.test

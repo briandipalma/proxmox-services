@@ -10,7 +10,6 @@ prowlarr.test
 nzbget.test
 qbittorrent.test
 samba.test
-tdarr.test
 bazarr.test
 network.test
 syncthing.test
@@ -48,9 +47,6 @@ qbittorrent.test
 
 [samba]
 samba.test
-
-[tdarr]
-tdarr.test
 
 [bazarr]
 bazarr.test
