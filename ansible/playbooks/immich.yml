@@ -1,0 +1,5 @@
+---
+- hosts: immich
+  roles:
+    - { role: common, tags: all }
+    - { role: immich, tags: immich }

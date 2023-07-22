@@ -1,0 +1,66 @@
+---
+- name: Install required system packages
+  apt:
+    pkg:
+      - ca-certificates
+      - curl
+      - gnupg
+    state: latest
+    update_cache: true
+
+- name: Add Docker GPG apt Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Update apt and install docker-ce
+  apt:
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    state: latest
+    update_cache: true
+
+- name: Download Immich Docker compose file
+  get_url:
+    url: https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
+    dest: /mnt/storage/appdata/immich/docker-compose.yml
+    mode: 0644
+
+- name: Download Immich .env file
+  get_url:
+    url: https://github.com/immich-app/immich/releases/latest/download/example.env
+    dest: /mnt/storage/appdata/immich/.env
+    mode: 0644
+
+- name: Change upload location
+  ansible.builtin.lineinfile:
+    path: /mnt/storage/appdata/immich/.env
+    regexp: "UPLOAD_LOCATION=absolute_location_on_your_machine_where_you_want_to_store_the_backup"
+    line: UPLOAD_LOCATION=/mnt/storage/media/pictures
+
+- name: Install pip
+  apt:
+    pkg:
+      - python3-pip
+    state: latest
+
+- name: Install docker python package
+  ansible.builtin.pip:
+    name:
+      - docker
+      - docker-compose
+    state: latest
+
+- name: Start immich docker compose
+  community.docker.docker_compose:
+    project_src: /mnt/storage/appdata/immich
+    pull: true

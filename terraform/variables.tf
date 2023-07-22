@@ -51,6 +51,11 @@ variable "radarr_lxcid" {
   default = 503
 }
 
+variable "immich_lxcid" {
+  type    = number
+  default = 504
+}
+
 variable "qbittorrent_lxcid" {
   type    = number
   default = 506
@@ -234,6 +239,11 @@ variable "samba_ip" {
 variable "network_ip" {
   type    = string
   default = "192.168.1.29/24"
+}
+
+variable "immich_ip" {
+  type    = string
+  default = "192.168.1.30/24"
 }
 
 variable "work_docker_ip" {

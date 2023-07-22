@@ -1,0 +1,17 @@
+---
+http:
+  routers:
+    to-immich:
+      rule: "Host(`immich.test`)"
+      service: immich
+    to-immich-secure:
+      rule: "Host(`photos.dipalma.duckdns.org`)"
+      service: immich
+      tls:
+        certResolver: letsencrypt
+
+  services:
+    immich:
+      loadBalancer:
+        servers:
+          - url: http://192.168.1.30:2283
