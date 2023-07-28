@@ -1,6 +1,6 @@
 ---
 - name: Install required system packages
-  apt:
+  ansible.builtin.apt:
     pkg:
       - ca-certificates
       - curl
@@ -9,17 +9,17 @@
     update_cache: true
 
 - name: Add Docker GPG apt Key
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
 - name: Add Docker Repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: deb https://download.docker.com/linux/ubuntu focal stable
     state: present
 
 - name: Update apt and install docker-ce
-  apt:
+  ansible.builtin.apt:
     pkg:
       - docker-ce
       - docker-ce-cli
@@ -30,16 +30,16 @@
     update_cache: true
 
 - name: Download Immich Docker compose file
-  get_url:
+  ansible.builtin.get_url:
     url: https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
     dest: /mnt/storage/appdata/immich/docker-compose.yml
-    mode: 0644
+    mode: "0644"
 
 - name: Download Immich .env file
-  get_url:
+  ansible.builtin.get_url:
     url: https://github.com/immich-app/immich/releases/latest/download/example.env
     dest: /mnt/storage/appdata/immich/.env
-    mode: 0644
+    mode: "0644"
 
 - name: Change upload location
   ansible.builtin.lineinfile:
@@ -48,7 +48,7 @@
     line: UPLOAD_LOCATION=/mnt/storage/media/pictures
 
 - name: Install pip
-  apt:
+  ansible.builtin.apt:
     pkg:
       - python3-pip
     state: latest
