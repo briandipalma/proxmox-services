@@ -41,11 +41,22 @@
     dest: /mnt/storage/appdata/immich/.env
     mode: "0644"
 
+- name: Copy Immich config file
+  ansible.builtin.copy:
+    src: immich.config
+    dest: /mnt/storage/appdata/immich/immich.config
+    mode: "0644"
+
 - name: Change upload location
   ansible.builtin.lineinfile:
     path: /mnt/storage/appdata/immich/.env
-    regexp: "UPLOAD_LOCATION=absolute_location_on_your_machine_where_you_want_to_store_the_backup"
+    regexp: "UPLOAD_LOCATION=./library"
     line: UPLOAD_LOCATION=/mnt/storage/media/pictures
+
+- name: Change config file location
+  ansible.builtin.lineinfile:
+    path: /mnt/storage/appdata/immich/.env
+    line: IMMICH_CONFIG_FILE=/mnt/storage/appdata/immich/immich.config
 
 - name: Install pip
   ansible.builtin.apt:
