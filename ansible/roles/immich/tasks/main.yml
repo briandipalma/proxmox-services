@@ -32,6 +32,7 @@
 - name: Download Immich Docker compose file
   ansible.builtin.get_url:
     url: https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
+    force: true
     dest: /mnt/storage/appdata/immich/docker-compose.yml
     mode: "0644"
 
@@ -39,6 +40,7 @@
   ansible.builtin.get_url:
     url: https://github.com/immich-app/immich/releases/latest/download/example.env
     dest: /mnt/storage/appdata/immich/.env
+    force: true
     mode: "0644"
 
 - name: Copy Immich config file
