@@ -21,7 +21,7 @@ resource "proxmox_lxc" "immich" {
   // Terraform will crash without rootfs defined
   rootfs {
     storage = "local-lvm"
-    size    = "12G"
+    size    = "16G"
   }
 
   mountpoint {
