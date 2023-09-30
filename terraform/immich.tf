@@ -12,6 +12,7 @@ resource "proxmox_lxc" "immich" {
   onboot          = true
   vmid            = var.immich_lxcid
   memory          = 8192
+  cores           = 4
 
   features {
     keyctl  = true

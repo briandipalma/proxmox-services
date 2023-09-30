@@ -9,6 +9,7 @@ resource "proxmox_lxc" "jellyfin" {
   onboot          = true
   vmid            = var.jellyfin_lxcid
   memory          = 8192
+  cores           = 4
 
   // Terraform will crash without rootfs defined
   rootfs {
