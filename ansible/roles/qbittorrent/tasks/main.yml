@@ -1,19 +1,20 @@
+---
 - name: Create qBittorrent group
-  group:
+  ansible.builtin.group:
     name: qbittorrent
     state: present
 
 - name: Create qBittorrent user
-  user:
+  ansible.builtin.user:
     name: qbittorrent
     groups: qbittorrent
     shell: /sbin/nologin
-    append: yes
+    append: true
     state: present
-    create_home: no
+    create_home: false
 
 - name: Install packages
-  apt:
+  ansible.builtin.apt:
     pkg:
       - gnupg
     state: latest
@@ -23,14 +24,14 @@
     repo: ppa:qbittorrent-team/qbittorrent-stable
 
 - name: Install qBittorrent
-  apt:
+  ansible.builtin.apt:
     pkg:
       - qbittorrent-nox
     state: latest
-    update_cache: yes
+    update_cache: true
 
 - name: Copy systemd service file to server
-  copy:
+  ansible.builtin.copy:
     src: qbittorrent.service
     dest: /etc/systemd/system
     owner: root
