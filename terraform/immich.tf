@@ -11,8 +11,8 @@ resource "proxmox_lxc" "immich" {
   start           = true
   onboot          = true
   vmid            = var.immich_lxcid
-  memory          = 8192
-  cores           = 4
+  memory          = 12288
+  cores           = 8
 
   features {
     keyctl  = true
@@ -22,7 +22,7 @@ resource "proxmox_lxc" "immich" {
   // Terraform will crash without rootfs defined
   rootfs {
     storage = "local-lvm"
-    size    = "16G"
+    size    = "20G"
   }
 
   mountpoint {
