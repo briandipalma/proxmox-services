@@ -12,6 +12,7 @@ resource "proxmox_lxc" "pi-hole-primary" {
   onboot          = true
   vmid            = var.pi-hole-primary_lxcid
   memory          = 1024
+  cores           = 4
 
   // Terraform will crash without rootfs defined
   rootfs {

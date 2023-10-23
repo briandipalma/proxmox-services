@@ -55,11 +55,6 @@
     regexp: "UPLOAD_LOCATION=./library"
     line: UPLOAD_LOCATION=/mnt/storage/media/pictures
 
-- name: Change config file location
-  ansible.builtin.lineinfile:
-    path: /mnt/storage/appdata/immich/.env
-    line: IMMICH_CONFIG_FILE=/mnt/storage/appdata/immich/immich.config
-
 - name: Install pip
   ansible.builtin.apt:
     pkg:
