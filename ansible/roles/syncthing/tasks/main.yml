@@ -3,6 +3,7 @@
   ansible.builtin.group:
     name: syncthing
     state: present
+    gid: 118
 
 - name: Create Syncthing user
   ansible.builtin.user:
