@@ -69,6 +69,6 @@
     state: latest
 
 - name: Start immich docker compose
-  community.docker.docker_compose:
+  community.docker.docker_compose_v2:
     project_src: /mnt/storage/appdata/immich
-    pull: true
+    pull: "always"

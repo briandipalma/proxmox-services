@@ -4,7 +4,7 @@
 
 - name: Install Traefik
   ansible.builtin.unarchive:
-    src: https://github.com/traefik/traefik/releases/download/v3.0.1/traefik_v3.0.1_linux_amd64.tar.gz
+    src: https://github.com/traefik/traefik/releases/download/v3.0.2/traefik_v3.0.2_linux_amd64.tar.gz
     dest: /usr/local/bin
     remote_src: true
   notify:
