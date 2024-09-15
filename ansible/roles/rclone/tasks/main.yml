@@ -4,7 +4,7 @@
 
 - name: Install rclone
   ansible.builtin.apt:
-    deb: https://downloads.rclone.org/v1.67.0/rclone-v1.67.0-linux-amd64.deb
+    deb: https://downloads.rclone.org/v1.68.0/rclone-v1.68.0-linux-amd64.deb
 
 - name: Copy Rclone config
   ansible.builtin.copy:
