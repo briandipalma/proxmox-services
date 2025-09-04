@@ -11,7 +11,8 @@ resource "proxmox_lxc" "lidarr" {
   start           = true
   onboot          = true
   vmid            = var.lidarr_lxcid
-  memory          = 1024
+  memory          = 2048
+  cores           = 2
 
   // Terraform will crash without rootfs defined
   rootfs {
