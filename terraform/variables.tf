@@ -91,16 +91,6 @@ variable "network_lxcid" {
   default = 515
 }
 
-variable "work_docker_lxcid" {
-  type    = number
-  default = 516
-}
-
-variable "keycloak_lxcid" {
-  type    = number
-  default = 518
-}
-
 variable "syncthing_lxcid" {
   type    = number
   default = 520
@@ -114,11 +104,6 @@ variable "lidarr_lxcid" {
 variable "wireguard_lxcid" {
   type    = number
   default = 523
-}
-
-variable "rclone_lxcid" {
-  type    = number
-  default = 524
 }
 
 variable "traefik_mac" {
@@ -164,11 +149,6 @@ variable "prowlarr_mac" {
 variable "network_mac" {
   type    = string
   default = "42:98:73:F5:A2:A8"
-}
-
-variable "work_docker_mac" {
-  type    = string
-  default = "F6:82:27:AF:F1:47"
 }
 
 variable "pi-hole-primary_ip" {
@@ -231,11 +211,6 @@ variable "immich_ip" {
   default = "192.168.1.30/24"
 }
 
-variable "work_docker_ip" {
-  type    = string
-  default = "192.168.1.34/24"
-}
-
 variable "syncthing_ip" {
   type    = string
   default = "192.168.1.36/24"
@@ -249,9 +224,4 @@ variable "lidarr_ip" {
 variable "wireguard_ip" {
   type    = string
   default = "192.168.1.39/24"
-}
-
-variable "rclone_ip" {
-  type    = string
-  default = "192.168.1.40/24"
 }

@@ -15,7 +15,6 @@ network.test
 syncthing.test
 lidarr.test
 wireguard.test
-rclone.test
 
 [pi_hole]
 192.168.1.2
@@ -62,6 +61,3 @@ lidarr.test
 
 [wireguard]
 wireguard.test
-
-[rclone]
-rclone.test

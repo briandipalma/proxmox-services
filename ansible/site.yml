@@ -8,7 +8,6 @@
 - import_playbook: ./playbooks/prowlarr.yml
 - import_playbook: ./playbooks/qbittorrent.yml
 - import_playbook: ./playbooks/radarr.yml
-- import_playbook: ./playbooks/rclone.yml
 - import_playbook: ./playbooks/samba.yml
 - import_playbook: ./playbooks/sonarr.yml
 - import_playbook: ./playbooks/syncthing.yml
