@@ -1,5 +1,0 @@
----
-- hosts: nzbget
-  roles:
-    - { role: common, tags: all }
-    - { role: nzbget, tags: nzbget }

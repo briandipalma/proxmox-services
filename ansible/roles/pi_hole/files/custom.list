@@ -5,7 +5,6 @@
 192.168.1.4 tv.test
 192.168.1.4 movies.test
 192.168.1.4 search.test
-192.168.1.4 nzbs.test
 192.168.1.4 torrents.test
 192.168.1.4 traefik.test
 192.168.1.4 sync.test
@@ -15,7 +14,6 @@
 192.168.1.22 sonarr.test
 192.168.1.23 radarr.test
 192.168.1.24 prowlarr.test
-192.168.1.25 nzbget.test
 192.168.1.26 qbittorrent.test
 192.168.1.27 bazarr.test
 192.168.1.28 samba.test

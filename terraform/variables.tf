@@ -61,11 +61,6 @@ variable "qbittorrent_lxcid" {
   default = 506
 }
 
-variable "nzbget_lxcid" {
-  type    = number
-  default = 507
-}
-
 variable "samba_lxcid" {
   type    = number
   default = 508
@@ -151,11 +146,6 @@ variable "qbittorrent_mac" {
   default = "EE:28:5A:1B:D5:DD"
 }
 
-variable "nzbget_mac" {
-  type    = string
-  default = "12:E8:11:73:7E:38"
-}
-
 variable "samba_mac" {
   type    = string
   default = "CE:04:BF:59:F1:7F"
@@ -214,11 +204,6 @@ variable "radarr_ip" {
 variable "prowlarr_ip" {
   type    = string
   default = "192.168.1.24/24"
-}
-
-variable "nzbget_ip" {
-  type    = string
-  default = "192.168.1.25/24"
 }
 
 variable "qbittorrent_ip" {

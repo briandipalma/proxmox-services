@@ -8,7 +8,6 @@ jellyfin.test
 sonarr.test
 radarr.test
 prowlarr.test
-nzbget.test
 qbittorrent.test
 samba.test
 bazarr.test
@@ -42,9 +41,6 @@ radarr.test
 
 [prowlarr]
 prowlarr.test
-
-[nzbget]
-nzbget.test
 
 [qbittorrent]
 qbittorrent.test
