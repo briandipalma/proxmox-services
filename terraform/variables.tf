@@ -96,11 +96,6 @@ variable "syncthing_lxcid" {
   default = 520
 }
 
-variable "lidarr_lxcid" {
-  type    = number
-  default = 521
-}
-
 variable "wireguard_lxcid" {
   type    = number
   default = 523
@@ -214,11 +209,6 @@ variable "immich_ip" {
 variable "syncthing_ip" {
   type    = string
   default = "192.168.1.36/24"
-}
-
-variable "lidarr_ip" {
-  type    = string
-  default = "192.168.1.37/24"
 }
 
 variable "wireguard_ip" {

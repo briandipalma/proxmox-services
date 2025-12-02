@@ -13,7 +13,6 @@ samba.test
 bazarr.test
 network.test
 syncthing.test
-lidarr.test
 wireguard.test
 
 [pi_hole]
@@ -55,9 +54,6 @@ network.test
 
 [syncthing]
 syncthing.test
-
-[lidarr]
-lidarr.test
 
 [wireguard]
 wireguard.test

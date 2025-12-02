@@ -21,6 +21,5 @@
 192.168.1.29 network.test
 192.168.1.30 immich.test
 192.168.1.36 syncthing.test
-192.168.1.37 lidarr.test
 192.168.1.39 wireguard.test
 192.168.1.80 brians-oneplus3t.test

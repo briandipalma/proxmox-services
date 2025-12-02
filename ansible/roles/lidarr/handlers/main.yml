@@ -1,6 +1,0 @@
----
-- name: Start Lidarr
-  systemd:
-    name: lidarr
-    state: started
-    enabled: true
