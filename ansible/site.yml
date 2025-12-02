@@ -1,5 +1,4 @@
 ---
-- import_playbook: ./playbooks/bazarr.yml
 - import_playbook: ./playbooks/immich.yml
 - import_playbook: ./playbooks/jellyfin.yml
 - import_playbook: ./playbooks/network.yml

@@ -15,7 +15,6 @@
 192.168.1.23 radarr.test
 192.168.1.24 prowlarr.test
 192.168.1.26 qbittorrent.test
-192.168.1.27 bazarr.test
 192.168.1.28 samba.test
 192.168.1.28 files.test
 192.168.1.29 network.test

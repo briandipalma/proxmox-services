@@ -81,11 +81,6 @@ variable "prowlarr_lxcid" {
   default = 511
 }
 
-variable "bazarr_lxcid" {
-  type    = number
-  default = 513
-}
-
 variable "network_lxcid" {
   type    = number
   default = 515
@@ -184,11 +179,6 @@ variable "prowlarr_ip" {
 variable "qbittorrent_ip" {
   type    = string
   default = "192.168.1.26/24"
-}
-
-variable "bazarr_ip" {
-  type    = string
-  default = "192.168.1.27/24"
 }
 
 variable "samba_ip" {
